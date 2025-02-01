@@ -1,6 +1,4 @@
-// src/pages/Home.js
 import React from 'react';
-import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const Home = () => {
@@ -26,16 +24,6 @@ const Home = () => {
           </Tile>
         </TileContainer>
       </Main>
-
-      <Footer>
-        <SocialLinks>
-          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">Twitter</a>
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a>
-          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a>
-          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-          <a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a>
-        </SocialLinks>
-      </Footer>
     </PageContainer>
   );
 };
@@ -47,59 +35,15 @@ const PageContainer = styled.div`
   min-height: 100vh;
 `;
 
-const Header = styled.header`
-  background-color: #2c3e50;
-  padding: 10px 20px;
-`;
-
-const Nav = styled.nav`
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-`;
-
-const NavItem = styled(Link)`
-  color: #ecf0f1;
-  text-decoration: none;
-  font-size: 1rem;
-  font-weight: 500;
-
-  &:hover {
-    color: #1abc9c;
-  }
-`;
-
 const Main = styled.main`
   flex: 1;
   padding: 20px;
-  background-color: #f9f9f9;
+  background-color:rgb(0, 0, 0);
   text-align: center;
 `;
 
-const Footer = styled.footer`
-  background-color: #2c3e50;
-  color: #ecf0f1;
-  text-align: center;
-  padding: 20px 0;
-`;
-
-const SocialLinks = styled.div`
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-
-  a {
-    color: #ecf0f1;
-    text-decoration: none;
-    font-size: 1.2rem;
-
-    &:hover {
-      color: #1abc9c;
-    }
-  }
-`;
 const Tile = styled.div`
-  background-color: #fff;
+  background-color: ${({ theme }) => theme.mainBackgroundColor || '#f9f9f9'}; /* Fallback to parent background color */
   border: 1px solid #ddd;
   border-radius: 8px;
   padding: 20px;
@@ -115,6 +59,7 @@ const Tile = styled.div`
     color: #7f8c8d;
   }
 `;
+
 const TileContainer = styled.div`
   display: grid;
   gap: 20px;
@@ -132,6 +77,5 @@ const TileContainer = styled.div`
     grid-template-columns: 1fr;
   }
 `;
-
 
 export default Home;

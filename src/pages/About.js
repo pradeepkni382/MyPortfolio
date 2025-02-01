@@ -44,7 +44,7 @@ const AboutContainer = styled.div`
   align-items: flex-start;
   padding: 20px;
   gap: 20px;
-  background-color: ${({ theme }) => (theme === 'dark' ? '#2c3e50' : '#f9f9f9')};
+  background-color: #000000;
   color: ${({ theme }) => (theme === 'dark' ? '#ecf0f1' : '#333')};
   font-family: 'Roboto', sans-serif;
   transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */

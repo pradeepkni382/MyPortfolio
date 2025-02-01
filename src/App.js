@@ -1,7 +1,7 @@
 // src/App.js
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import HomeLayout from './layouts/HomeLayout';
+import LandingPage from './layouts/LandingPage';
 import Project from './pages/Project';
 import Resume from './pages/Resume';
 import Contact from './pages/Contact';
@@ -13,7 +13,7 @@ const App = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<HomeLayout />}>
+        <Route path="/" element={<LandingPage />}>
           <Route index element={<Home />} /> {/* Default body content */}
           <Route path="home" element={<Home />} />
           <Route path="about" element={<About />} />

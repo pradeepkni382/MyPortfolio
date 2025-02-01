@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link, Outlet } from 'react-router-dom';
 import styled from 'styled-components';
-import companyLogo from '../assets/companylogo.jpg';
 import xLogo from '../assets/xlogo.jpg';
 import instaLogo from '../assets/instalogo.jpg';
 import fbLogo from '../assets/fblogo.jpg';
@@ -9,8 +8,9 @@ import linkedinLogo from '../assets/emaillogo.jpg';
 import githubLogo from '../assets/gitlogo.jpg';
 import moonIcon from '../assets/moonicon.jpg'; // Dark mode icon
 import sunIcon from '../assets/sunicon.jpg';   // Light mode icon
+import ptIcon from  '../assets/PTLogo.jpg';
 
-const HomeLayout = () => {
+const LandingPage = () => {
   const [isDarkMode, setIsDarkMode] = useState(() => {
     // Initialize the theme from localStorage, defaulting to false (light mode)
     return JSON.parse(localStorage.getItem('darkMode')) || false;
@@ -29,8 +29,15 @@ const HomeLayout = () => {
   return (
     <Container isDarkMode={isDarkMode}>
       <Header isDarkMode={isDarkMode}>
-        <Logo onClick={() => (window.location.href = "/")}>
+        {/* <Logo onClick={() => (window.location.href = "/")}>
           PRADEEP
+        </Logo> */}
+        <Logo>
+          <img
+            src={ptIcon}
+            alt="Company Logo"
+            onClick={() => (window.location.href = "/")}
+          />
         </Logo>
         <Nav>
           <NavItem to="/Home" isDarkMode={isDarkMode}>
@@ -93,12 +100,12 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   height: 100vh;
-  background-color: ${({ isDarkMode }) => (isDarkMode ? "#121212" : "#ffffff")};
-  color: ${({ isDarkMode }) => (isDarkMode ? "#ffffff" : "#000000")};
+  background-color: ${({ isDarkMode }) => (isDarkMode ? "#ffffff" : "#ffffff")};
+  color: ${({ isDarkMode }) => (isDarkMode ? "#ffffff" : "#ffffff")};
 `;
 
 const Header = styled.header`
-  background-color: ${({ isDarkMode }) => (isDarkMode ? "#1e272e" : "#f4f4f4")};
+  background-color: ${({ isDarkMode }) => (isDarkMode ? "#000000" : "#f4f4f4")};
   padding: 10px 20px;
   display: flex;
   align-items: center;
@@ -108,11 +115,11 @@ const Header = styled.header`
 const Main = styled.main`
   flex: 1;
   overflow-y: auto;
-  padding: 20px;
+  background-color:#000000
 `;
 
 const Footer = styled.footer`
-  background-color: ${({ isDarkMode }) => (isDarkMode ? "#2c3e50" : "#f4f4f4")};
+  background-color: ${({ isDarkMode }) => (isDarkMode ? "#000000" : "#f4f4f4")};
   color: ${({ isDarkMode }) => (isDarkMode ? "#ecf0f1" : "#000000")};
   padding: 20px 0;
 `;
@@ -144,10 +151,32 @@ const NavItem = styled(Link)`
   text-decoration: none;
   color: ${({ isDarkMode }) => (isDarkMode ? "#ffffff" : "#000000")};
   font-weight: bold;
+  position: relative; /* So that the pseudo-element can be positioned relative to the NavItem */
+  padding-bottom: 5px;
+
   &:hover {
     color: #007bff;
   }
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px; /* Adjust thickness of the line */
+    background-color: yellow; /* Yellow color for the line */
+    transform: scaleX(0); /* Initially the line is hidden */
+    transform-origin: bottom right; /* Starts from the right */
+    transition: transform 0.3s ease; /* Smooth transition for the line */
+  }
+
+  &:hover::after {
+    transform: scaleX(1); /* Line becomes visible on hover */
+    transform-origin: bottom left; /* Expands from the left */
+  }
 `;
+
 
 const Logo = styled.div`
   img {
@@ -201,4 +230,5 @@ const Copyright = styled.div`
   font-size: 0.9rem;
 `;
 
-export default HomeLayout;
+
+export default LandingPage;
