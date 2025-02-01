@@ -6,19 +6,6 @@ import styled from 'styled-components';
 const Home = () => {
   return (
     <PageContainer>
-      <Header>
-        <Nav>
-          <NavItem to="/announcements">Announcements</NavItem>
-          <NavItem to="/ourapps">OurApps</NavItem>
-          <NavItem to="/privacy">Privacy</NavItem>
-          <NavItem to="/support">Support</NavItem>
-          <NavItem to="/contact">Contact</NavItem>
-          <NavItem to="/about">About</NavItem>
-          <NavItem to="/blogs">Blogs</NavItem>
-        </Nav>
-      </Header>
-
-      
       <Main>
         <TileContainer>
           <Tile>

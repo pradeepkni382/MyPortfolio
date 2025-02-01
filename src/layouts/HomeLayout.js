@@ -29,34 +29,27 @@ const HomeLayout = () => {
   return (
     <Container isDarkMode={isDarkMode}>
       <Header isDarkMode={isDarkMode}>
-        <Logo>
-          <img
-            src={companyLogo}
-            alt="Company Logo"
-            onClick={() => (window.location.href = "/")}
-          />
+        <Logo onClick={() => (window.location.href = "/")}>
+          PRADEEP
         </Logo>
         <Nav>
-          <NavItem to="/announcements" isDarkMode={isDarkMode}>
-            Announcements
+          <NavItem to="/Home" isDarkMode={isDarkMode}>
+          Home
           </NavItem>
-          <NavItem to="/ourapps" isDarkMode={isDarkMode}>
-            Apps
+          <NavItem to="/About" isDarkMode={isDarkMode}>
+          About
           </NavItem>
-          <NavItem to="/privacy" isDarkMode={isDarkMode}>
-            Privacy
+          <NavItem to="/Project" isDarkMode={isDarkMode}>
+          Project
           </NavItem>
-          <NavItem to="/support" isDarkMode={isDarkMode}>
-            Support
+          <NavItem to="/Resume" isDarkMode={isDarkMode}>
+          Resume
           </NavItem>
-          <NavItem to="/contact" isDarkMode={isDarkMode}>
-            Contact
+          <NavItem to="/Blogs" isDarkMode={isDarkMode}>
+          Blogs
           </NavItem>
-          <NavItem to="/about" isDarkMode={isDarkMode}>
-            About
-          </NavItem>
-          <NavItem to="/blogs" isDarkMode={isDarkMode}>
-            Blogs
+          <NavItem to="/Contact" isDarkMode={isDarkMode}>
+          Contact
           </NavItem>
         </Nav>
         <ThemeToggle onClick={toggleTheme}>
