@@ -9,6 +9,13 @@ import githubLogo from '../assets/gitlogo.jpg';
 import moonIcon from '../assets/moonicon.jpg'; // Dark mode icon
 import sunIcon from '../assets/sunicon.jpg';   // Light mode icon
 import ptIcon from  '../assets/PTLogo.jpg';
+import homeIcon from  '../assets/home.png';
+import aboutIcon from  '../assets/about.png';
+import projectIcon from  '../assets/project.png';
+import resumeIcon from  '../assets/resume.png';
+import blogIcon from  '../assets/blogs.png';
+import contactIcon from  '../assets/contact.png';
+
 
 const LandingPage = () => {
   const [isDarkMode, setIsDarkMode] = useState(() => {
@@ -40,22 +47,22 @@ const LandingPage = () => {
           />
         </Logo>
         <Nav>
-          <NavItem to="/Home" isDarkMode={isDarkMode}>
+          <NavItem to="/Home" isDarkMode={isDarkMode} icon={homeIcon}>
           Home
           </NavItem>
-          <NavItem to="/About" isDarkMode={isDarkMode}>
+          <NavItem to="/About" isDarkMode={isDarkMode} icon={aboutIcon}>
           About
           </NavItem>
-          <NavItem to="/Project" isDarkMode={isDarkMode}>
+          <NavItem to="/Project" isDarkMode={isDarkMode} icon={projectIcon}>
           Project
           </NavItem>
-          <NavItem to="/Resume" isDarkMode={isDarkMode}>
+          <NavItem to="/Resume" isDarkMode={isDarkMode} icon={resumeIcon}>
           Resume
           </NavItem>
-          <NavItem to="/Blogs" isDarkMode={isDarkMode}>
+          <NavItem to="/Blogs" isDarkMode={isDarkMode} icon={blogIcon}>
           Blogs
           </NavItem>
-          <NavItem to="/Contact" isDarkMode={isDarkMode}>
+          <NavItem to="/Contact" isDarkMode={isDarkMode} icon={contactIcon}>
           Contact
           </NavItem>
         </Nav>
@@ -151,8 +158,22 @@ const NavItem = styled(Link)`
   text-decoration: none;
   color: ${({ isDarkMode }) => (isDarkMode ? "#ffffff" : "#000000")};
   font-weight: bold;
-  position: relative; /* So that the pseudo-element can be positioned relative to the NavItem */
+  position: relative;
   padding-bottom: 5px;
+  display: flex;
+  align-items: center; /* Ensure text and icon align properly */
+  gap: 10px; /* Space between the icon and text */
+
+  &::before {
+    content: '';
+    display: inline-block;
+    width: 20px; /* Icon width */
+    height: 20px; /* Icon height */
+    background-image: ${({ icon }) => `url(${icon})`}; /* Dynamically set icon */
+    background-size: cover; /* Make sure the icon fits within the box */
+    background-position: center;
+    margin-right: 8px; /* Space between the icon and the text */
+  }
 
   &:hover {
     color: #007bff;
@@ -164,16 +185,16 @@ const NavItem = styled(Link)`
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 2px; /* Adjust thickness of the line */
-    background-color: yellow; /* Yellow color for the line */
-    transform: scaleX(0); /* Initially the line is hidden */
-    transform-origin: bottom right; /* Starts from the right */
-    transition: transform 0.3s ease; /* Smooth transition for the line */
+    height: 2px;
+    background-color: yellow;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease;
   }
 
   &:hover::after {
-    transform: scaleX(1); /* Line becomes visible on hover */
-    transform-origin: bottom left; /* Expands from the left */
+    transform: scaleX(1);
+    transform-origin: bottom left;
   }
 `;
 
