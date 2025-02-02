@@ -102,14 +102,14 @@ const Container = styled.div`
   height: 100vh;
   background: ${({ isDarkMode }) =>
     isDarkMode
-      ? "linear-gradient(135deg, #000000, rgb(10, 10, 81))" // Darker space gradient
-      : "linear-gradient(135deg, #000000, rgb(10, 10, 81))"}; // Lighter space gradient (dawn-like)
+      ? "linear-gradient(135deg, rgb(52, 46, 59), rgb(76, 66, 96))" // Darker space gradient
+      : "linear-gradient(135deg, rgb(52, 46, 59), rgb(76, 66, 96))"}; // Lighter space gradient (dawn-like)
   color: ${({ isDarkMode }) => (isDarkMode ? "#ffffff" : "#ffffff")};
   transition: background 0.5s ease;
 `;
-
+//background-color: ${({ isDarkMode }) => (isDarkMode ? "#000000" : "#f4f4f4")};
 const Header = styled.header`
-  background-color: ${({ isDarkMode }) => (isDarkMode ? "#000000" : "#f4f4f4")};
+  background-color: transparent;
   padding: 10px 20px;
   display: flex;
   align-items: center;
@@ -121,9 +121,9 @@ const Main = styled.main`
   overflow-y: auto;
   background: transparent; /* Make background of main content area transparent */
 `;
-
+// background-color: ${({ isDarkMode }) => (isDarkMode ? "#000000" : "#000000")};
 const Footer = styled.footer`
-  background-color: ${({ isDarkMode }) => (isDarkMode ? "#000000" : "#000000")};
+  background-color: transparent;
   color: ${({ isDarkMode }) => (isDarkMode ? "#ecf0f1" : "#000000")};
   padding: 5px 0;
 `;

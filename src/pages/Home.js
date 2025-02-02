@@ -1,80 +1,137 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
+import homeLandingIcon from  '../assets/homelanding.png';
 
 const Home = () => {
+  const [typing, setTyping] = useState('');
+  const [messageIndex, setMessageIndex] = useState(0);
+  const messages = [
+    "iOS Developer",
+    "Android Developer",
+    "macOS App Developer", 
+    "A High Agency Developer"
+  ];
+
+  // Function to simulate typing with async/await
+  const typeMessage = async (message) => {
+    for (let i = 0; i < message.length; i++) {
+      // Add one character at a time
+      setTyping((prev) => prev + message[i]);
+      console.log(`value of i -- currentMessage.length: ${i} currentMessage: ${message[i]}`);
+      
+      // Wait for 100ms before adding the next character
+      await new Promise(resolve => setTimeout(resolve, 100));
+    }
+
+    // Once the message is fully typed, wait 1 second before switching to the next message
+    setTimeout(() => {
+      setMessageIndex((prev) => (prev + 1) % messages.length);
+    }, 1000);
+  };
+
+  useEffect(() => {
+    let currentMessage = messages[messageIndex];
+    
+    // Clear previous typing when switching messages
+    setTyping('');
+    
+    // Start typing the message
+    typeMessage(currentMessage);
+
+    // Cleanup any ongoing typing if messageIndex changes or component unmounts
+    return () => {
+      setTyping('');
+    };
+  }, [messageIndex]); // Dependency on messageIndex
+
   return (
     <PageContainer>
       <Main>
-        <TileContainer>
-          <Tile>
-            <h3>App 1</h3>
-            <p>Explore our innovative solutions for App 1.</p>
-          </Tile>
-          <Tile>
-            <h3>App 2</h3>
-            <p>Discover the features of App 2, designed for you.</p>
-          </Tile>
-          <Tile>
-            <h3>App 3</h3>
-            <p>Learn more about App 3 and its capabilities.</p>
-          </Tile>
-          <Tile>
-            <h3>App 4</h3>
-            <p>Dive into App 4 for advanced functionality.</p>
-          </Tile>
-        </TileContainer>
+        <TopContainer>
+          <RightContainer>
+            <h1>Hi There! 👋🏻</h1>
+            <h2>I am Pradeep Tiwari</h2>
+            <h3>{typing}</h3>
+          </RightContainer>
+          <LeftContainer>
+            <img src={homeLandingIcon} alt="Profile" />
+          </LeftContainer>
+        </TopContainer>
+        <BottomContainer>
+          <p>This is a brief introduction about me. I am passionate about building scalable applications using the MERN stack.</p>
+        </BottomContainer>
       </Main>
     </PageContainer>
   );
 };
-
+// background: linear-gradient(to right, #000428, #004e92); /* Space-like bluish gradient */
 // Styled Components
 const PageContainer = styled.div`
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  background: transparent; /* Space-like bluish gradient */
+  color: #fff;
 `;
 
 const Main = styled.main`
   flex: 1;
   padding: 20px;
-  background-color:transparent;
+  background-color: transparent;
   text-align: center;
 `;
 
-const Tile = styled.div`
-  background-color: ${({ theme }) => theme.mainBackgroundColor || '#f9f9f9'}; /* Fallback to parent background color */
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 20px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  text-align: center;
-
-  h3 {
-    margin-bottom: 10px;
-    color: #2c3e50;
-  }
-
-  p {
-    color: #7f8c8d;
-  }
-`;
-
-const TileContainer = styled.div`
-  display: grid;
-  gap: 20px;
-
-  /* 3 columns for larger screens */
-  grid-template-columns: repeat(3, 1fr);
+const TopContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
 
   @media (max-width: 768px) {
-    /* 2 columns for medium screens */
-    grid-template-columns: repeat(2, 1fr);
+    flex-direction: column;
+    text-align: center;
   }
+`;
 
-  @media (max-width: 480px) {
-    /* 1 column for small screens */
-    grid-template-columns: 1fr;
+const LeftContainer = styled.div`
+  flex: 1;
+  max-width: 40%;
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+`;
+
+const RightContainer = styled.div`
+  flex: 2;
+  max-width: 55%;
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+  }
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  h3 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #f39c12; /* Highlight typing text */
+  }
+`;
+
+const BottomContainer = styled.div`
+  margin-top: 30px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+
+  p {
+    font-size: 1.2rem;
+    color: #ecf0f1;
   }
 `;
 
