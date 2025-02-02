@@ -2,12 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { Link, Outlet } from 'react-router-dom';
 import styled from 'styled-components';
 import xLogo from '../assets/xlogo.jpg';
-import instaLogo from '../assets/instalogo.jpg';
 import fbLogo from '../assets/fblogo.jpg';
-import linkedinLogo from '../assets/emaillogo.jpg';
+import linkedinLogo from '../assets/linkedin.png';
 import githubLogo from '../assets/gitlogo.jpg';
-import moonIcon from '../assets/moonicon.jpg'; // Dark mode icon
-import sunIcon from '../assets/sunicon.jpg';   // Light mode icon
 import ptIcon from  '../assets/PTLogo.jpg';
 import homeIcon from  '../assets/home.png';
 import aboutIcon from  '../assets/about.png';
@@ -69,19 +66,19 @@ const LandingPage = () => {
       <Footer isDarkMode={isDarkMode}>
         <FooterContent>
           <SocialLinks>
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://x.com/pradeepkni382" target="_blank" rel="noopener noreferrer">
               <img src={xLogo} alt="Twitter" />
             </a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+            {/* <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
               <img src={instaLogo} alt="Instagram" />
-            </a>
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+            </a> */}
+            <a href="https://www.facebook.com/pradeep.tiwari.16" target="_blank" rel="noopener noreferrer">
               <img src={fbLogo} alt="Facebook" />
             </a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.linkedin.com/in/pradeep-tiwari-kni382/" target="_blank" rel="noopener noreferrer">
               <img src={linkedinLogo} alt="LinkedIn" />
             </a>
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/pradeepkni382" target="_blank" rel="noopener noreferrer">
               <img src={githubLogo} alt="GitHub" />
             </a>
           </SocialLinks>
