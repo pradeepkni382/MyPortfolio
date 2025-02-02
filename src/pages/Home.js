@@ -129,11 +129,11 @@ const LeftContainer = styled.div`
   max-width: 40%; /* Limiting max-width ensures it doesn't stretch too much */
   
   img {
-    width: 100%; /* Allow image to fully take up container space */
+    width: 70%; /* Allow image to fully take up container space */
     height: auto; /* Keep aspect ratio intact */
     border-radius: 10px;
     box-shadow: 0 18px 18px rgba(240, 237, 237, 0.08);
-    object-fit: cover; /* Ensures image doesn't stretch */
+    object-fit: c over; /* Ensures image doesn't stretch */
   }
 
   /* Optional: Adding padding to ensure image is not too close to the edges */
@@ -221,7 +221,7 @@ const Text = styled.p`
   color:rgb(250, 250, 250);
   line-height: 1.6;
   strong {
-    color: #2ecc71;
+    color: #f39c12;
     font-weight: 600;
   }
 `;
@@ -234,7 +234,7 @@ const Description = styled.p`
 
   strong {
     font-weight: bold;
-    color: #2ecc71;
+    color: #f39c12;
   }
 `;
 
