@@ -53,6 +53,25 @@ const Contact = () => {
       color: '#555',
       lineHeight: '1.6',
     },
+    contactSubheading: {
+      fontSize: '1.2rem',
+      fontWeight: 'bold',
+      marginTop: '20px',
+      color: '#333',
+    },
+    contactSubDescription: {
+      fontSize: '1rem',
+      color: '#555',
+    },
+    socialMediaLinks: {
+      display: 'flex',
+      gap: '10px',
+      marginTop: '15px',
+    },
+    socialIcon: {
+      width: '30px',
+      height: '30px',
+    },
     contactRight: {
       flex: 1,
       maxWidth: '45%', // Ensure both sides are equal width
@@ -132,11 +151,47 @@ const Contact = () => {
   return (
     <div style={styles.contactContainer}>
       <div style={styles.contactLeft}>
-        <h2 style={styles.contactLeftHeading}>Get in touch</h2>
-        <p style={styles.contactLeftDescription}>
-          If you have any questions or want to reach out, feel free to contact me through the form.
-        </p>
+        <h2 style={styles.contactLeftHeading}>Get in Touch</h2>
+
+        {/* Visit Us */}
+        <div>
+          <h3 style={styles.contactSubheading}>Visit Us</h3>
+          <p style={styles.contactSubDescription}>1234 Random Street, Random City, ABC 56789</p>
+        </div>
+
+        {/* Chat to Us */}
+        <div>
+          <h3 style={styles.contactSubheading}>Chat to Us</h3>
+          <p style={styles.contactSubDescription}>Our team would be happy to help. Reach out to us at <a href="mailto:help@randomcompany.com">help@randomcompany.com</a></p>
+        </div>
+
+        {/* Call Us */}
+        <div>
+          <h3 style={styles.contactSubheading}>Call Us</h3>
+          <p style={styles.contactSubDescription}>Monday to Saturday</p>
+          <p style={styles.contactSubDescription}>+1 234 567 890</p>
+        </div>
+
+        {/* Social Media */}
+        <div>
+          <h3 style={styles.contactSubheading}>Social Media</h3>
+          <div style={styles.socialMediaLinks}>
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+              <img src="https://via.placeholder.com/30x30?text=F" alt="Facebook" style={styles.socialIcon} />
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+              <img src="https://via.placeholder.com/30x30?text=L" alt="LinkedIn" style={styles.socialIcon} />
+            </a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+              <img src="https://via.placeholder.com/30x30?text=I" alt="Instagram" style={styles.socialIcon} />
+            </a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+              <img src="https://via.placeholder.com/30x30?text=T" alt="Twitter" style={styles.socialIcon} />
+            </a>
+          </div>
+        </div>
       </div>
+
       <div style={styles.contactRight}>
         <form onSubmit={handleSubmit}>
           <div style={styles.formGroupRow}>
