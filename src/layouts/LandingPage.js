@@ -59,9 +59,9 @@ const LandingPage = () => {
             Contact
           </NavItem>
         </Nav>
-        <ThemeToggle onClick={toggleTheme}>
+        {/* <ThemeToggle onClick={toggleTheme}>
           <img src={isDarkMode ? sunIcon : moonIcon} alt="Toggle Theme" />
-        </ThemeToggle>
+        </ThemeToggle> */}
       </Header>
       <Main isDarkMode={isDarkMode}>
         <Outlet />
@@ -148,7 +148,7 @@ const FooterContent = styled.div`
 
 const Nav = styled.nav`
   display: flex;
-  gap: 15px;
+  gap: 35px;
 `;
 
 const NavItem = styled(Link)`
@@ -159,7 +159,7 @@ const NavItem = styled(Link)`
   padding-bottom: 5px;
   display: flex;
   align-items: center;
-  gap: 10px;
+  // gap: 10px;
 
   &::before {
     content: '';
@@ -169,7 +169,7 @@ const NavItem = styled(Link)`
     background-image: ${({ icon }) => `url(${icon})`};
     background-size: cover;
     background-position: center;
-    margin-right: 8px;
+    // margin-right: 8px;
   }
 
   &:hover {
