@@ -16,19 +16,15 @@ import resumeIcon from  '../assets/resume.png';
 import blogIcon from  '../assets/blogs.png';
 import contactIcon from  '../assets/contact.png';
 
-
 const LandingPage = () => {
   const [isDarkMode, setIsDarkMode] = useState(() => {
-    // Initialize the theme from localStorage, defaulting to false (light mode)
     return JSON.parse(localStorage.getItem('darkMode')) || false;
   });
 
-  // Update localStorage whenever the theme changes
   useEffect(() => {
     localStorage.setItem('darkMode', JSON.stringify(isDarkMode));
   }, [isDarkMode]);
 
-  // Toggle theme
   const toggleTheme = () => {
     setIsDarkMode((prev) => !prev);
   };
@@ -36,9 +32,6 @@ const LandingPage = () => {
   return (
     <Container isDarkMode={isDarkMode}>
       <Header isDarkMode={isDarkMode}>
-        {/* <Logo onClick={() => (window.location.href = "/")}>
-          PRADEEP
-        </Logo> */}
         <Logo>
           <img
             src={ptIcon}
@@ -48,22 +41,22 @@ const LandingPage = () => {
         </Logo>
         <Nav>
           <NavItem to="/Home" isDarkMode={isDarkMode} icon={homeIcon}>
-          Home
+            Home
           </NavItem>
           <NavItem to="/About" isDarkMode={isDarkMode} icon={aboutIcon}>
-          About
+            About
           </NavItem>
           <NavItem to="/Project" isDarkMode={isDarkMode} icon={projectIcon}>
-          Project
+            Project
           </NavItem>
           <NavItem to="/Resume" isDarkMode={isDarkMode} icon={resumeIcon}>
-          Resume
+            Resume
           </NavItem>
           <NavItem to="/Blogs" isDarkMode={isDarkMode} icon={blogIcon}>
-          Blogs
+            Blogs
           </NavItem>
           <NavItem to="/Contact" isDarkMode={isDarkMode} icon={contactIcon}>
-          Contact
+            Contact
           </NavItem>
         </Nav>
         <ThemeToggle onClick={toggleTheme}>
@@ -101,14 +94,18 @@ const LandingPage = () => {
   );
 };
 
-// Styled Components with Theme Integration
+// Styled Components with Theme Integration and Space-like Gradient
 
 const Container = styled.div`
   display: flex;
   flex-direction: column;
   height: 100vh;
-  background-color: ${({ isDarkMode }) => (isDarkMode ? "#ffffff" : "#ffffff")};
+  background: ${({ isDarkMode }) =>
+    isDarkMode
+      ? "linear-gradient(135deg, #000000, rgb(10, 10, 81))" // Darker space gradient
+      : "linear-gradient(135deg, #000000, rgb(10, 10, 81))"}; // Lighter space gradient (dawn-like)
   color: ${({ isDarkMode }) => (isDarkMode ? "#ffffff" : "#ffffff")};
+  transition: background 0.5s ease;
 `;
 
 const Header = styled.header`
@@ -122,13 +119,13 @@ const Header = styled.header`
 const Main = styled.main`
   flex: 1;
   overflow-y: auto;
-  background-color:#000000
+  background: transparent; /* Make background of main content area transparent */
 `;
 
 const Footer = styled.footer`
-  background-color: ${({ isDarkMode }) => (isDarkMode ? "#000000" : "#f4f4f4")};
+  background-color: ${({ isDarkMode }) => (isDarkMode ? "#000000" : "#000000")};
   color: ${({ isDarkMode }) => (isDarkMode ? "#ecf0f1" : "#000000")};
-  padding: 20px 0;
+  padding: 5px 0;
 `;
 
 const FooterContent = styled.div`
@@ -161,18 +158,18 @@ const NavItem = styled(Link)`
   position: relative;
   padding-bottom: 5px;
   display: flex;
-  align-items: center; /* Ensure text and icon align properly */
-  gap: 10px; /* Space between the icon and text */
+  align-items: center;
+  gap: 10px;
 
   &::before {
     content: '';
     display: inline-block;
-    width: 20px; /* Icon width */
-    height: 20px; /* Icon height */
-    background-image: ${({ icon }) => `url(${icon})`}; /* Dynamically set icon */
-    background-size: cover; /* Make sure the icon fits within the box */
+    width: 20px;
+    height: 20px;
+    background-image: ${({ icon }) => `url(${icon})`};
+    background-size: cover;
     background-position: center;
-    margin-right: 8px; /* Space between the icon and the text */
+    margin-right: 8px;
   }
 
   &:hover {
@@ -198,7 +195,6 @@ const NavItem = styled(Link)`
   }
 `;
 
-
 const Logo = styled.div`
   img {
     cursor: pointer;
@@ -218,8 +214,8 @@ const ThemeToggle = styled.div`
   cursor: pointer;
 
   img {
-    width: 15px; /* Set your desired width */
-    height: 15px; /* Set your desired height */
+    width: 15px;
+    height: 15px;
     transition: transform 0.3s ease;
 
     &:hover {
@@ -250,6 +246,5 @@ const SocialLinks = styled.div`
 const Copyright = styled.div`
   font-size: 0.9rem;
 `;
-
 
 export default LandingPage;

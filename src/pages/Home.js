@@ -38,7 +38,7 @@ const PageContainer = styled.div`
 const Main = styled.main`
   flex: 1;
   padding: 20px;
-  background-color:rgb(0, 0, 0);
+  background-color:transparent;
   text-align: center;
 `;
 
