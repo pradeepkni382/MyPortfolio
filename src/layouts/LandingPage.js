@@ -35,6 +35,7 @@ const LandingPage = () => {
             alt="Company Logo"
             onClick={() => (window.location.href = "/")}
           />
+          <h2>Pradeep</h2> {/* Add your name here */}
         </Logo>
         <Nav>
           <NavItem to="/Home" isDarkMode={isDarkMode} icon={homeIcon}>
@@ -193,6 +194,10 @@ const NavItem = styled(Link)`
 `;
 
 const Logo = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Add a little space between the logo and the text */
+
   img {
     cursor: pointer;
     height: 50px;
@@ -204,6 +209,12 @@ const Logo = styled.div`
     &:hover {
       transform: scale(1.1);
     }
+  }
+
+  h2 {
+    font-size: 1.5rem; /* Adjust the size of the name */
+    color: #f39c12;
+    font-weight: 600;
   }
 `;
 

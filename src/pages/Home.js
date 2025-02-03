@@ -1,23 +1,29 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import styled from 'styled-components';
-import homeLandingIcon from  '../assets/homelanding.png';
+import homeLandingIcon from '../assets/homelanding.png';
 
 const Home = () => {
   const [typing, setTyping] = useState('');
   const [messageIndex, setMessageIndex] = useState(0);
+  const typingRef = useRef(''); // To store the typing message
+  const isFirstRender = useRef(true); // To track the first render
+
   const messages = [
-    "iOS Developer",
-    "Android Developer",
-    "macOS App Developer", 
-    "A High Agency Developer"
+    "Mobile App Developer",
+    "macOS App Developer",
+    "A High Agency Developer",
   ];
 
   // Function to simulate typing with async/await
   const typeMessage = async (message) => {
+    typingRef.current = ''; // Reset the typing message each time a new message starts typing
+    setTyping(''); // Clear current message immediately
+
     for (let i = 0; i < message.length; i++) {
       // Add one character at a time
-      setTyping((prev) => prev + message[i]);
-      
+      typingRef.current += message[i];
+      setTyping(typingRef.current); // Update state with the current typed message
+
       // Wait for 100ms before adding the next character
       await new Promise(resolve => setTimeout(resolve, 100));
     }
@@ -29,17 +35,19 @@ const Home = () => {
   };
 
   useEffect(() => {
-    let currentMessage = messages[messageIndex];
-    
-    // Clear previous typing when switching messages
-    setTyping('');
+    if (isFirstRender.current) {
+      isFirstRender.current = false; // Set it to false after the first render
+      return; // Prevent typing effect from triggering on initial render
+    }
+
+    const currentMessage = messages[messageIndex];
     
     // Start typing the message
     typeMessage(currentMessage);
 
     // Cleanup any ongoing typing if messageIndex changes or component unmounts
     return () => {
-      setTyping('');
+      typingRef.current = ''; // Reset the typing ref
     };
   }, [messageIndex]); // Dependency on messageIndex
 
@@ -57,50 +65,49 @@ const Home = () => {
           </LeftContainer>
         </TopContainer>
         <BottomContainer>
-  <SectionHeading>📌 Why Work With Me?</SectionHeading>
-  <Content>
-    <ContentItem>
-      <Icon>✔</Icon>
-      <Text>
-        <strong>Self-Starter:</strong> I take ownership of problems and find solutions without waiting for direction.
-      </Text>
-    </ContentItem>
-    <ContentItem>
-      <Icon>✔</Icon>
-      <Text>
-        <strong>Results-Oriented:</strong> My optimizations have directly improved performance, security, and user experience.
-      </Text>
-    </ContentItem>
-    <ContentItem>
-      <Icon>✔</Icon>
-      <Text>
-        <strong>Fast Learner:</strong> Picked up Golang, SwiftUI, and security frameworks proactively to enhance product development.
-      </Text>
-    </ContentItem>
-    <ContentItem>
-      <Icon>✔</Icon>
-      <Text>
-        <strong>High Impact:</strong> Delivered scalable features used by thousands of users with minimal oversight.
-      </Text>
-    </ContentItem>
-  </Content>
-  <Description>
-    I believe in getting things done, making decisions that move projects forward, and continuously improving my craft. <br />
-    <strong>Let’s build something exceptional together. 🚀</strong>
-  </Description>
-</BottomContainer>
-
+          <SectionHeading>📌 Why Work With Me?</SectionHeading>
+          <Content>
+            <ContentItem>
+              <Icon>✔</Icon>
+              <Text>
+                <strong>Self-Starter:</strong> I take ownership of problems and find solutions without waiting for direction.
+              </Text>
+            </ContentItem>
+            <ContentItem>
+              <Icon>✔</Icon>
+              <Text>
+                <strong>Results-Oriented:</strong> My optimizations have directly improved performance, security, and user experience.
+              </Text>
+            </ContentItem>
+            <ContentItem>
+              <Icon>✔</Icon>
+              <Text>
+                <strong>Fast Learner:</strong> Picked up Golang, SwiftUI, and security frameworks proactively to enhance product development.
+              </Text>
+            </ContentItem>
+            <ContentItem>
+              <Icon>✔</Icon>
+              <Text>
+                <strong>High Impact:</strong> Delivered scalable features used by thousands of users with minimal oversight.
+              </Text>
+            </ContentItem>
+          </Content>
+          <Description>
+            I believe in getting things done, making decisions that move projects forward, and continuously improving my craft. <br />
+            <strong>Let’s build something exceptional together. 🚀</strong>
+          </Description>
+        </BottomContainer>
       </Main>
     </PageContainer>
   );
 };
-// background: linear-gradient(to right, #000428, #004e92); /* Space-like bluish gradient */
+
 // Styled Components
 const PageContainer = styled.div`
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background: transparent; /* Space-like bluish gradient */
+  background: transparent;
   color: #fff;
 `;
 
@@ -117,7 +124,6 @@ const TopContainer = styled.div`
   align-items: center;
   gap: 30px;
 
-  /* Ensure that the layout stacks vertically on small screens */
   @media (max-width: 768px) {
     flex-direction: column;
     text-align: center;
@@ -126,23 +132,22 @@ const TopContainer = styled.div`
 
 const LeftContainer = styled.div`
   flex: 1;
-  max-width: 40%; /* Limiting max-width ensures it doesn't stretch too much */
+  max-width: 40%;
   
   img {
-    width: 70%; /* Allow image to fully take up container space */
-    height: auto; /* Keep aspect ratio intact */
+    width: 70%;
+    height: auto;
     border-radius: 10px;
     box-shadow: 0 18px 18px rgba(240, 237, 237, 0.08);
-    object-fit: c over; /* Ensures image doesn't stretch */
+    object-fit: cover;
   }
 
-  /* Optional: Adding padding to ensure image is not too close to the edges */
   padding: 10px;
 `;
 
 const RightContainer = styled.div`
   flex: 2;
-  max-width: 55%; /* Allow the right container to take up more space */
+  max-width: 55%;
 
   h1 {
     font-size: 3rem;
@@ -150,42 +155,38 @@ const RightContainer = styled.div`
   }
 
   h2 {
-    font-size: 2.5rem; /* Slightly smaller size for the name */
+    font-size: 2.5rem;
     margin-bottom: 20px;
-    text-shadow: 10px 10px 10px rgba(235, 222, 222, 0.2); /* Shadow below the name */
+    text-shadow: 10px 10px 10px rgba(235, 222, 222, 0.2);
   }
 
   h3 {
     font-size: 2rem;
     font-weight: bold;
-    color: #f39c12; /* Highlight typing text */
+    color: #f39c12;
   }
 
-  /* Optional: Adding some padding or margin for better spacing */
   padding: 0 20px;
 `;
-
 
 const BottomContainer = styled.div`
   background: transparent;
   padding: 40px 20px;
-  margin-top: 100px; /* Space between bottom container and top container */
+  margin-top: 100px;
   border-radius: 10px;
   box-shadow: 0 6px 18px rgba(240, 237, 237, 0.08);
   max-width: 900px;
   margin: 0 auto;
   text-align: left;
-  
-  /* Optional: Adding responsiveness */
+
   @media (max-width: 768px) {
-    padding: 30px 15px; /* Adjust padding on small screens */
+    padding: 30px 15px;
   }
-  
+
   @media (max-width: 480px) {
-    max-width: 100%; /* Allow bottom container to take full width on very small screens */
+    max-width: 100%;
   }
 `;
-
 
 const SectionHeading = styled.h2`
   font-size: 2rem;
@@ -237,6 +238,5 @@ const Description = styled.p`
     color: #f39c12;
   }
 `;
-
 
 export default Home;
