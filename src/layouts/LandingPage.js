@@ -14,57 +14,42 @@ import blogIcon from  '../assets/blogs.png';
 import contactIcon from  '../assets/contact.png';
 
 const LandingPage = () => {
-  const [isDarkMode, setIsDarkMode] = useState(() => {
-    return JSON.parse(localStorage.getItem('darkMode')) || false;
-  });
-
-  useEffect(() => {
-    localStorage.setItem('darkMode', JSON.stringify(isDarkMode));
-  }, [isDarkMode]);
-
-  const toggleTheme = () => {
-    setIsDarkMode((prev) => !prev);
-  };
-
   return (
-    <Container isDarkMode={isDarkMode}>
-      <Header isDarkMode={isDarkMode}>
+    <Container>
+      <Header>
         <Logo>
           <img
             src={ptIcon}
             alt="Company Logo"
             onClick={() => (window.location.href = "/")}
           />
-          <h2>Pradeep</h2> {/* Add your name here */}
+          <h2>Pradeep</h2>
         </Logo>
         <Nav>
-          <NavItem to="/Home" isDarkMode={isDarkMode} icon={homeIcon}>
+          <NavItem to="/Home" icon={homeIcon}>
             Home
           </NavItem>
-          <NavItem to="/About" isDarkMode={isDarkMode} icon={aboutIcon}>
+          <NavItem to="/About"  icon={aboutIcon}>
             About
           </NavItem>
-          <NavItem to="/Project" isDarkMode={isDarkMode} icon={projectIcon}>
+          <NavItem to="/Project"  icon={projectIcon}>
             Project
           </NavItem>
-          <NavItem to="/Resume" isDarkMode={isDarkMode} icon={resumeIcon}>
+          <NavItem to="/Resume"  icon={resumeIcon}>
             Resume
           </NavItem>
-          <NavItem to="/Blogs" isDarkMode={isDarkMode} icon={blogIcon}>
+          <NavItem to="/Blogs"  icon={blogIcon}>
             Blogs
           </NavItem>
-          <NavItem to="/Contact" isDarkMode={isDarkMode} icon={contactIcon}>
+          <NavItem to="/Contact"  icon={contactIcon}>
             Contact
           </NavItem>
         </Nav>
-        {/* <ThemeToggle onClick={toggleTheme}>
-          <img src={isDarkMode ? sunIcon : moonIcon} alt="Toggle Theme" />
-        </ThemeToggle> */}
       </Header>
-      <Main isDarkMode={isDarkMode}>
+      <Main>
         <Outlet />
       </Main>
-      <Footer isDarkMode={isDarkMode}>
+      <Footer>
         <FooterContent>
         <DevInfo>
            Developed by Pradeep Tiwari.
@@ -73,9 +58,6 @@ const LandingPage = () => {
             <a href="https://x.com/pradeepkni382" target="_blank" rel="noopener noreferrer">
               <img src={xLogo} alt="Twitter" />
             </a>
-            {/* <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
-              <img src={instaLogo} alt="Instagram" />
-            </a> */}
             <a href="https://www.facebook.com/pradeep.tiwari.16" target="_blank" rel="noopener noreferrer">
               <img src={fbLogo} alt="Facebook" />
             </a>
@@ -95,20 +77,16 @@ const LandingPage = () => {
   );
 };
 
-// Styled Components with Theme Integration and Space-like Gradient
 
 const Container = styled.div`
   display: flex;
   flex-direction: column;
   height: 100vh;
-  background: ${({ isDarkMode }) =>
-    isDarkMode
-      ? "linear-gradient(135deg, rgb(52, 46, 59), rgb(76, 66, 96))" // Darker space gradient
-      : "linear-gradient(135deg, rgb(52, 46, 59), rgb(76, 66, 96))"}; // Lighter space gradient (dawn-like)
-  color: ${({ isDarkMode }) => (isDarkMode ? "#ffffff" : "#ffffff")};
+  background: linear-gradient(135deg, rgb(52, 46, 59), rgb(76, 66, 96)); // Lighter space gradient (dawn-like)
+  color:  "#ffffff";
   transition: background 0.5s ease;
 `;
-//background-color: ${({ isDarkMode }) => (isDarkMode ? "#000000" : "#f4f4f4")};
+
 const Header = styled.header`
   background-color: transparent;
   padding: 10px 20px;
@@ -122,10 +100,10 @@ const Main = styled.main`
   overflow-y: auto;
   background: transparent; /* Make background of main content area transparent */
 `;
-// background-color: ${({ isDarkMode }) => (isDarkMode ? "#000000" : "#000000")};
+
 const Footer = styled.footer`
   background-color: transparent;
-  color: ${({ isDarkMode }) => (isDarkMode ? "#ecf0f1" : "#000000")};
+  color: #ecf0f1;
   padding: 5px 0;
 `;
 

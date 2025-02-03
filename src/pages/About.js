@@ -45,7 +45,7 @@ const AboutContainer = styled.div`
   padding: 20px;
   gap: 20px;
   background-color: transparent;
-  color: ${({ theme }) => (theme === 'dark' ? '#ecf0f1' : '#333')};
+  color: #ecf0f1;
   font-family: 'Roboto', sans-serif;
   transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
 `;
@@ -56,6 +56,9 @@ const LeftContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 20px;
+  color: #ecf0f1
+  background: rgba(0, 0, 0, 0.7);
+  back
 `;
 
 const RightContainer = styled.div`
@@ -64,6 +67,8 @@ const RightContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 20px;
+  color: #ecf0f1
+  background: rgba(0, 0, 0, 0.7);
 `;
 
 const ProfileImage = styled.img`
