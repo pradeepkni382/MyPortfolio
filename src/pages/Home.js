@@ -4,42 +4,51 @@ import styled, { keyframes } from 'styled-components';
 const Home = () => {
   const [typing, setTyping] = useState('');
   const [messageIndex, setMessageIndex] = useState(0);
-  const typingRef = useRef('');
-  const isFirstRender = useRef(true);
+  const typingRef = useRef(''); // To store the typing message
+  const isFirstRender = useRef(true); // To track the first render
 
   const messages = [
-    "Mobile App Developer",
+    "iOS App Developer",
+    "Android App Developer",
     "macOS App Developer",
-    "A High Agency Developer",
   ];
 
+  // Function to simulate typing with async/await
   const typeMessage = async (message) => {
-    typingRef.current = '';
-    setTyping('');
+    typingRef.current = ''; // Reset the typing message each time a new message starts typing
+    setTyping(''); // Clear current message immediately
 
-    // Typing animation
     for (let i = 0; i < message.length; i++) {
+      // Add one character at a time
       typingRef.current += message[i];
-      setTyping(typingRef.current);
+      setTyping(typingRef.current); // Update state with the current typed message
+
+      // Wait for 100ms before adding the next character
       await new Promise(resolve => setTimeout(resolve, 100));
     }
 
-    // Pause before next message
+    // Once the message is fully typed, wait 1 second before switching to the next message
     setTimeout(() => {
       setMessageIndex((prev) => (prev + 1) % messages.length);
-    }, 2000);
+    }, 1000);
   };
 
   useEffect(() => {
     if (isFirstRender.current) {
-      typeMessage(messages[0]);
-      isFirstRender.current = false;
-      return;
+      isFirstRender.current = false; // Set it to false after the first render
+      return; // Prevent typing effect from triggering on initial render
     }
 
     const currentMessage = messages[messageIndex];
+    
+    // Start typing the message
     typeMessage(currentMessage);
-  }, [messageIndex]);
+
+    // Cleanup any ongoing typing if messageIndex changes or component unmounts
+    return () => {
+      typingRef.current = ''; // Reset the typing ref
+    };
+  }, [messageIndex]); // Dependency on messageIndex
 
   return (
     <PageContainer>
@@ -110,7 +119,7 @@ const blink = keyframes`
 const PageContainer = styled.div`
   display: flex;
   min-height: 100vh;
-  background: linear-gradient(135deg, #1a1f2e, #2d3548);
+  // background: linear-gradient(135deg, #1a1f2e, #2d3548);
   color: #f8f9fa;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 `;

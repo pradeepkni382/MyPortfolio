@@ -28,8 +28,8 @@ const About = () => {
 
       <RightContainer>
         <Section>
-        <ProfileImage src={myPortrait} alt="Pradeep Tiwari's Profile" />
-          <h2>📌 Skills</h2>
+          <ProfileImage src={myPortrait} alt="Pradeep Tiwari's Profile" />
+          <h2>🌟 Skills</h2>
           <ul>
             <li>Swift, SwiftUI, Objective-C, Kotlin, Golang, C++, REST APIs, VPN, MDM, CI/CD, Security, Profiling & Optimization</li>
           </ul>

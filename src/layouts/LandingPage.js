@@ -66,6 +66,9 @@ const LandingPage = () => {
       </Main>
       <Footer isDarkMode={isDarkMode}>
         <FooterContent>
+        <DevInfo>
+           Developed by Pradeep Tiwari.
+          </DevInfo>
           <SocialLinks>
             <a href="https://x.com/pradeepkni382" target="_blank" rel="noopener noreferrer">
               <img src={xLogo} alt="Twitter" />
@@ -151,13 +154,12 @@ const Nav = styled.nav`
 
 const NavItem = styled(Link)`
   text-decoration: none;
-  color: ${({ isDarkMode }) => (isDarkMode ? "#ffffff" : "#000000")};
+  color: #f39c12;
   font-weight: bold;
   position: relative;
   padding-bottom: 5px;
   display: flex;
   align-items: center;
-  // gap: 10px;
 
   &::before {
     content: '';
@@ -167,7 +169,7 @@ const NavItem = styled(Link)`
     background-image: ${({ icon }) => `url(${icon})`};
     background-size: cover;
     background-position: center;
-    // margin-right: 8px;
+    filter: sepia(1) saturate(5) hue-rotate(100deg); /* Adjust to match your #f39c12 tint */
   }
 
   &:hover {
@@ -192,6 +194,7 @@ const NavItem = styled(Link)`
     transform-origin: bottom left;
   }
 `;
+
 
 const Logo = styled.div`
   display: flex;
@@ -253,6 +256,13 @@ const SocialLinks = styled.div`
 
 const Copyright = styled.div`
   font-size: 0.9rem;
+  text-align: right;
+  flex: 1; /* Make it take up the right portion */
+`;
+const DevInfo = styled.div`
+  font-size: 0.9rem;
+  text-align: left;
+  flex: 1; /* Make it take up the left portion */
 `;
 
 export default LandingPage;
