@@ -1,12 +1,11 @@
 import React, { useEffect, useState, useRef } from 'react';
-import styled from 'styled-components';
-import homeLandingIcon from '../assets/homelanding.png';
+import styled, { keyframes } from 'styled-components';
 
 const Home = () => {
   const [typing, setTyping] = useState('');
   const [messageIndex, setMessageIndex] = useState(0);
-  const typingRef = useRef(''); // To store the typing message
-  const isFirstRender = useRef(true); // To track the first render
+  const typingRef = useRef('');
+  const isFirstRender = useRef(true);
 
   const messages = [
     "Mobile App Developer",
@@ -18,29 +17,28 @@ const Home = () => {
     typingRef.current = '';
     setTyping('');
 
+    // Typing animation
     for (let i = 0; i < message.length; i++) {
       typingRef.current += message[i];
       setTyping(typingRef.current);
       await new Promise(resolve => setTimeout(resolve, 100));
     }
 
+    // Pause before next message
     setTimeout(() => {
       setMessageIndex((prev) => (prev + 1) % messages.length);
-    }, 1000);
+    }, 2000);
   };
 
   useEffect(() => {
     if (isFirstRender.current) {
+      typeMessage(messages[0]);
       isFirstRender.current = false;
       return;
     }
 
     const currentMessage = messages[messageIndex];
     typeMessage(currentMessage);
-
-    return () => {
-      typingRef.current = '';
-    };
   }, [messageIndex]);
 
   return (
@@ -48,42 +46,47 @@ const Home = () => {
       <Main>
         <TopContainer>
           <RightContainer>
-            <h1>Namaste ! 🙏</h1>
-            <h2>I am Pradeep Tiwari 🇮🇳</h2>
-            <h3>{typing}</h3>
+            <Greeting>Namaste ! 🙏</Greeting>
+            <Name>I am Pradeep Tiwari 🇮🇳</Name>
+            <TypingText>{typing}<Cursor>|</Cursor></TypingText>
           </RightContainer>
+          
           <LeftContainer>
-            <SectionHeading>📌 Why Work With Me?</SectionHeading>
-            <Content>
-              <ContentItem>
-                <Icon>✔</Icon>
-                <Text>
-                  <strong>Self-Starter:</strong> I take ownership of problems and find solutions without waiting for direction.
-                </Text>
-              </ContentItem>
-              <ContentItem>
-                <Icon>✔</Icon>
-                <Text>
-                  <strong>Results-Oriented:</strong> My optimizations have directly improved performance, security, and user experience.
-                </Text>
-              </ContentItem>
-              <ContentItem>
-                <Icon>✔</Icon>
-                <Text>
-                  <strong>Fast Learner:</strong> Picked up Golang, SwiftUI, and security frameworks proactively to enhance product development.
-                </Text>
-              </ContentItem>
-              <ContentItem>
-                <Icon>✔</Icon>
-                <Text>
-                  <strong>High Impact:</strong> Delivered scalable features used by thousands of users with minimal oversight.
-                </Text>
-              </ContentItem>
-            </Content>
-            <Description>
-              I believe in getting things done, making decisions that move projects forward, and continuously improving my craft. <br />
-              <strong>Let’s build something exceptional together. 🚀</strong>
-            </Description>
+            <SectionHeading>🌟 Why Work With Me?</SectionHeading>
+            <ContentGrid>
+              <BulletPoint>
+                <CheckIcon>✓</CheckIcon>
+                <BulletText>
+                  <strong>Self-Starter:</strong> Take ownership of problems and drive solutions independently
+                </BulletText>
+              </BulletPoint>
+              
+              <BulletPoint>
+                <CheckIcon>✓</CheckIcon>
+                <BulletText>
+                  <strong>Results-Oriented:</strong> Proven track record in performance, security, and UX improvements
+                </BulletText>
+              </BulletPoint>
+
+              <BulletPoint>
+                <CheckIcon>✓</CheckIcon>
+                <BulletText>
+                  <strong>Fast Learner:</strong> Mastered Golang, SwiftUI, and security frameworks to enhance products
+                </BulletText>
+              </BulletPoint>
+
+              <BulletPoint>
+                <CheckIcon>✓</CheckIcon>
+                <BulletText>
+                  <strong>High Impact:</strong> Delivered scalable features for thousands of users with minimal oversight
+                </BulletText>
+              </BulletPoint>
+            </ContentGrid>
+
+            <CallToAction>
+              I believe in actionable results, data-driven decisions, and continuous improvement.<br />
+              <strong>Let's create something extraordinary together 🚀</strong>
+            </CallToAction>
           </LeftContainer>
         </TopContainer>
       </Main>
@@ -91,135 +94,156 @@ const Home = () => {
   );
 };
 
-// Styled Components
+// Animations
+const fadeIn = keyframes`
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+`;
 
+const blink = keyframes`
+  0% { opacity: 0; }
+  50% { opacity: 1; }
+  100% { opacity: 0; }
+`;
+
+// Styled Components
 const PageContainer = styled.div`
   display: flex;
-  flex-direction: column;
   min-height: 100vh;
-  // background: linear-gradient(135deg, rgba(30, 37, 57, 0.8), rgba(40, 53, 79, 0.8));
-  color: #fff;
-  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #1a1f2e, #2d3548);
+  color: #f8f9fa;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 `;
 
 const Main = styled.main`
   flex: 1;
-  padding: 50px 20px;
-  background-color: transparent;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  padding: 4rem 2rem;
+  margin: 0 auto;
+  max-width: 1200px;
+  animation: ${fadeIn} 0.6s ease-out;
 `;
 
 const TopContainer = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 40px;
-  max-width: 1200px;
-  margin: 0 auto;
-  
-  @media (max-width: 768px) {
-    flex-direction: column;
-    gap: 20px;
-    text-align: center;
-  }
-`;
-
-const LeftContainer = styled.div`
-  flex: 1;
-  max-width: 45%;
-  padding: 20px;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
-  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
-  margin-top: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: start;
 
   @media (max-width: 768px) {
-    max-width: 100%;
+    grid-template-columns: 1fr;
+    gap: 2rem;
   }
 `;
 
 const RightContainer = styled.div`
-  flex: 1;
-  max-width: 50%;
-  padding: 20px;
-  
-  h1 {
-    font-size: 3rem;
-    margin-bottom: 20px;
-    // text-transform: uppercase;
-    font-weight: 700;
-  }
+  position: relative;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+`;
 
-  h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    color: #f39c12;
-    font-weight: 600;
-    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
-  }
+const Greeting = styled.h1`
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: #4dabf7;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+`;
 
-  h3 {
-    font-size: 2rem;
-    font-weight: bold;
-    color: #f39c12;
-  }
+const Name = styled.h2`
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #ffe066;
+  font-weight: 600;
+  line-height: 1.2;
+`;
+
+const TypingText = styled.h3`
+  font-size: 1.75rem;
+  min-height: 2.5rem;
+  color: #74b9ff;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+`;
+
+const Cursor = styled.span`
+  margin-left: 4px;
+  animation: ${blink} 1s infinite;
+  color: #74b9ff;
+`;
+
+const LeftContainer = styled.div`
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 `;
 
 const SectionHeading = styled.h2`
-  font-size: 2rem;
-  font-weight: 600;
-  color: #f39c12;
-  margin-bottom: 20px;
+  font-size: 1.75rem;
+  margin-bottom: 2rem;
+  color: #63e6be;
   text-align: center;
-  letter-spacing: 2px;
+  font-weight: 600;
 `;
 
-const Content = styled.div`
+const ContentGrid = styled.div`
+  display: grid;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+`;
+
+const BulletPoint = styled.div`
   display: flex;
-  flex-direction: column;
-  gap: 20px;
+  gap: 1rem;
+  align-items: start;
+  padding: 1.2rem;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 8px;
+  transition: transform 0.2s ease;
+
+  &:hover {
+    transform: translateX(8px);
+  }
 `;
 
-const ContentItem = styled.div`
-  display: flex;
-  align-items: center;
-  font-size: 1.1rem;
-  color: #fff;
+const CheckIcon = styled.div`
+  font-size: 1.5rem;
+  color: #69db7c;
+  flex-shrink: 0;
+  margin-top: 2px;
 `;
 
-const Icon = styled.span`
-  font-size: 1.6rem;
-  color: #3498db;
-  margin-right: 15px;
-`;
-
-const Text = styled.p`
+const BulletText = styled.p`
   margin: 0;
-  font-size: 1rem;
-  color: rgb(240, 240, 240);
+  font-size: 1.1rem;
   line-height: 1.6;
+  color: #e9ecef;
+
   strong {
-    color: #f39c12;
+    color: #ffe066;
     font-weight: 600;
   }
 `;
 
-const Description = styled.p`
-  margin-top: 30px;
-  font-size: 1.1rem;
-  color: rgb(255, 255, 255);
+const CallToAction = styled.div`
   text-align: center;
-  max-width: 800px;
-  margin: 30px auto 0;
-  line-height: 1.8;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #dee2e6;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
 
   strong {
-    font-weight: bold;
-    color: #f39c12;
+    color: #4dabf7;
+    font-weight: 600;
+    display: inline-block;
+    margin-top: 1rem;
   }
 `;
 
