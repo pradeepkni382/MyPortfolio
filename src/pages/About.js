@@ -6,7 +6,6 @@ const About = () => {
   return (
     <AboutContainer>
       <LeftContainer>
-        <ProfileImage src={myPortrait} alt="Pradeep Tiwari's Profile" />
         <Bio>
           <h1>About Me</h1>
           <p>
@@ -29,6 +28,7 @@ const About = () => {
 
       <RightContainer>
         <Section>
+        <ProfileImage src={myPortrait} alt="Pradeep Tiwari's Profile" />
           <h2>📌 Skills</h2>
           <ul>
             <li>Swift, SwiftUI, Objective-C, Kotlin, Golang, C++, REST APIs, VPN, MDM, CI/CD, Security, Profiling & Optimization</li>
@@ -67,11 +67,12 @@ const RightContainer = styled.div`
 `;
 
 const ProfileImage = styled.img`
-  border-radius: 50%;
-  width: 150px;
-  height: 150px;
+  width: 100%;
+  height: 70%;
   object-fit: cover;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 5px solid rgba(192, 184, 184, 0.2); /* Border with a light gray color */
+  border-radius: 15px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(192, 184, 184, 0.2); /* Shadow with a slightly more pronounced effect */
 `;
 
 const Bio = styled.div`

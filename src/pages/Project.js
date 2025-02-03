@@ -8,28 +8,31 @@ const TransparentBackground = styled.div`
   background-image: url('path_to_your_image.jpg'); // Add a professional background image
   background-size: cover;
   background-position: center;
-  min-height: 100vh;
+  min-height: auto; /* Remove or adjust min-height */
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start; /* Align items from the top */
   align-items: center;
   color: white;
   font-family: 'Arial', sans-serif;
+  padding: 1rem 0; /* Add padding if needed for top/bottom spacing */
 `;
 
-// Styled components for project sections
+// Adjust the Header for less space
 const Header = styled.h1`
-  font-size: 3rem;
+  font-size: 2rem;
   margin-bottom: 1rem;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
 `;
 
+// Adjust ProjectContainer for padding and margin
 const ProjectContainer = styled.div`
   max-width: 80%;
   padding: 1.5rem;
   background: rgba(0, 0, 0, 0.7); // Slightly transparent background
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+  margin-bottom: 2rem; /* Reduce the space between sections */
 `;
 
 const Project = styled.a`
@@ -66,11 +69,12 @@ const ProjectDescription = styled.p`
 
 const ProjectPage = () => {
   return (
-    <TransparentBackground>
-      <Header>My Projects</Header>
+    <>
+      <TransparentBackground>
+      <Header>Professional Experience Projects</Header>
       <ProjectContainer>
         <Project href="#">
-          <ProjectImage src="path_to_image" alt="Bloxone Endpoint Clients" />
+          {/* <ProjectImage src="path_to_image" alt="Bloxone Endpoint Clients" /> */}
           <div>
             <ProjectTitle>Bloxone Endpoint Clients (macOS/Linux Apps)</ProjectTitle>
             <ProjectDescription>
@@ -80,7 +84,7 @@ const ProjectPage = () => {
           </div>
         </Project>
         <Project href="#">
-          <ProjectImage src="path_to_image" alt="Bloxone Endpoint Apps" />
+          {/* <ProjectImage src="path_to_image" alt="Bloxone Endpoint Apps" /> */}
           <div>
             <ProjectTitle>Bloxone Endpoint Apps (iOS/Android Apps)</ProjectTitle>
             <ProjectDescription>
@@ -90,7 +94,7 @@ const ProjectPage = () => {
           </div>
         </Project>
         <Project href="#">
-          <ProjectImage src="path_to_image" alt="Appzillon MADP" />
+          {/* <ProjectImage src="path_to_image" alt="Appzillon MADP" /> */}
           <div>
             <ProjectTitle>Appzillon MADP</ProjectTitle>
             <ProjectDescription>
@@ -100,7 +104,7 @@ const ProjectPage = () => {
           </div>
         </Project>
         <Project href="#">
-          <ProjectImage src="path_to_image" alt="Noor Bank App" />
+          {/* <ProjectImage src="path_to_image" alt="Noor Bank App" /> */}
           <div>
             <ProjectTitle>Noor Bank App</ProjectTitle>
             <ProjectDescription>
@@ -110,7 +114,7 @@ const ProjectPage = () => {
           </div>
         </Project>
         <Project href="#">
-          <ProjectImage src="path_to_image" alt="CITI Dealbase Express" />
+          {/* <ProjectImage src="path_to_image" alt="CITI Dealbase Express" /> */}
           <div>
             <ProjectTitle>CITI Dealbase Express</ProjectTitle>
             <ProjectDescription>
@@ -120,7 +124,7 @@ const ProjectPage = () => {
           </div>
         </Project>
         <Project href="#">
-          <ProjectImage src="path_to_image" alt="Spitamen Bank App" />
+          {/* <ProjectImage src="path_to_image" alt="Spitamen Bank App" /> */}
           <div>
             <ProjectTitle>Spitamen Bank App</ProjectTitle>
             <ProjectDescription>
@@ -131,6 +135,32 @@ const ProjectPage = () => {
         </Project>
       </ProjectContainer>
     </TransparentBackground>
+    <TransparentBackground>
+    <Header>Personal / Independent Projects</Header>
+      <ProjectContainer>
+        <Project href="#">
+          {/* <ProjectImage src="path_to_image" alt="Bloxone Endpoint Clients" /> */}
+          <div>
+            <ProjectTitle>Bloxone Endpoint Clients (macOS/Linux Apps)</ProjectTitle>
+            <ProjectDescription>
+              Designed and developed Infoblox Bloxone EP, a lightweight roaming client that securely redirects DNS queries from devices to the Infoblox Bloxone cloud service over an encrypted transport.
+              <br /><strong>Tech Stack:</strong> C++, Golang, macOS/Linux Networking
+            </ProjectDescription>
+          </div>
+        </Project>
+        <Project href="#">
+          {/* <ProjectImage src="path_to_image" alt="Bloxone Endpoint Apps" /> */}
+          <div>
+            <ProjectTitle>Bloxone Endpoint Apps (iOS/Android Apps)</ProjectTitle>
+            <ProjectDescription>
+              Developed security-focused endpoint applications for iOS and Android, operating at the DNS level to identify threats and prevent attacks early in the lifecycle. Integrated automation and ecosystem support for enhanced security.
+              <br /><strong>Tech Stack:</strong> Swift, Kotlin, Firebase, REST APIs
+            </ProjectDescription>
+          </div>
+        </Project>
+        </ProjectContainer>
+    </TransparentBackground>
+    </>
   );
 };
 
