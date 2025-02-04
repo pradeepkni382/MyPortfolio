@@ -112,6 +112,7 @@ const FooterContent = styled.div`
   justify-content: space-between;
   align-items: center;
   max-width: 1200px;
+  height: 20px;
   margin: 0 auto;
   padding: 0 20px;
 
@@ -219,8 +220,8 @@ const SocialLinks = styled.div`
 
   a {
     img {
-      width: 40px;
-      height: 40px;
+      width: 25px;
+      height: 25px;
       border-radius: 50%;
       object-fit: cover;
       transition: transform 0.2s;
