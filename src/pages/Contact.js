@@ -34,14 +34,15 @@ const Contact = () => {
   const styles = {
     contactContainer: {
       display: 'flex',
-      // justifyContent: 'space-between',
+      justifyContent: 'center', // Center the content horizontally
+      alignItems: 'center', // Center the content vertically
+      // height: '100vh', // Full height of the screen
       padding: '30px',
-      gap: '10px',
-      flexWrap: 'wrap',
     },
     contactLeft: {
       flex: 1,
-      maxWidth: '45%', // Ensure both sides are equal width
+      width: '100%', // Full width since there's no right container
+      maxWidth: '600px', // Limit the maximum width of the form
       padding: '20px',
       backgroundColor: 'rgba(0, 0, 0, 0.7)',
       borderRadius: '8px',
@@ -50,18 +51,18 @@ const Contact = () => {
     contactLeftHeading: {
       fontSize: '2rem',
       marginBottom: '10px',
-      color: '#333',
+      color: '#63e6be',
     },
     contactLeftDescription: {
       fontSize: '1.1rem',
-      color: '#555',
+      color: '#ffe066',
       lineHeight: '1.6',
     },
     contactSubheading: {
       fontSize: '1.2rem',
       fontWeight: 'bold',
       marginTop: '20px',
-      color: '#333',
+      color: '#ffd700',
     },
     contactSubDescription: {
       fontSize: '1rem',
@@ -75,15 +76,6 @@ const Contact = () => {
     socialIcon: {
       width: '30px',
       height: '30px',
-    },
-    contactRight: {
-      flex: 1,
-      maxWidth: '45%', // Ensure both sides are equal width
-      padding: '20px',
-      backgroundColor: 'rgba(0, 0, 0, 0.7)',
-      borderRadius: '8px',
-      boxShadow: '0 4px 10px rgba(0, 0, 0, 0.1)',
-      minWidth: '300px',
     },
     formGroup: {
       marginBottom: '20px',
@@ -146,39 +138,37 @@ const Contact = () => {
         flex: 'none',
         width: '100%',
       },
-      contactRight: {
-        width: '100%',
-      },
     },
   };
 
   return (
     <div style={styles.contactContainer}>
       <div style={styles.contactLeft}>
-        <h2 style={styles.contactLeftHeading}>Get in Touch</h2>
+        <h2 style={styles.contactLeftHeading}>Looking to Build Something Exciting?</h2>
 
         {/* Visit Us */}
-        <div>
+        {/* <div>
           <h3 style={styles.contactSubheading}>Visit Us</h3>
           <p style={styles.contactSubDescription}>1234 Random Street, Random City, ABC 56789</p>
-        </div>
+        </div> */}
 
         {/* Chat to Us */}
         <div>
-          <h3 style={styles.contactSubheading}>Chat to Us</h3>
-          <p style={styles.contactSubDescription}>Our team would be happy to help. Reach out to us at <a href="mailto:help@randomcompany.com">help@randomcompany.com</a></p>
+          <h3 style={styles.contactSubheading}>Let’s Chat!</h3>
+          <p style={styles.contactSubDescription}>I’m always open to discussing new projects. Feel free to reach out via email at <a href="mailto:pradeepkni382@gmail.com">pradeepkni382@gmail.com</a>, and I’ll get back to you as soon as I can.</p>
         </div>
 
         {/* Call Us */}
         <div>
-          <h3 style={styles.contactSubheading}>Call Us</h3>
-          <p style={styles.contactSubDescription}>Monday to Saturday</p>
-          <p style={styles.contactSubDescription}>+1 234 567 890</p>
+          <h3 style={styles.contactSubheading}>Call Me</h3>
+          <p style={styles.contactSubDescription}>I’m available Monday to Saturday.</p>
+          <p style={styles.contactSubDescription}>+91 7829145429</p>
         </div>
 
         {/* Social Media */}
         <div>
           <h3 style={styles.contactSubheading}>Social Media</h3>
+          <p style={styles.contactSubDescription}>Stay connected with me:</p>
           <div style={styles.socialMediaLinks}>
             <a href="https://www.facebook.com/pradeep.tiwari.16" target="_blank" rel="noopener noreferrer">
               <img src={fbLogo} alt="Facebook" style={styles.socialIcon} />
@@ -187,17 +177,16 @@ const Contact = () => {
               <img src={linkedinLogo} alt="LinkedIn" style={styles.socialIcon} />
             </a>
             <a href="https://github.com/pradeepkni382" target="_blank" rel="noopener noreferrer">
-              <img src={githubLogo} alt="github" style={styles.socialIcon} />
+              <img src={githubLogo} alt="GitHub" style={styles.socialIcon} />
             </a>
             <a href="https://x.com/pradeepkni382" target="_blank" rel="noopener noreferrer">
               <img src={xLogo} alt="Twitter" style={styles.socialIcon} />
             </a>
           </div>
         </div>
-      </div>
 
-      <div style={styles.contactRight}>
-        <form onSubmit={handleSubmit}>
+        {/* Contact Form */}
+        {/* <form onSubmit={handleSubmit}>
           <div style={styles.formGroupRow}>
             <div style={styles.formGroupHalfWidth}>
               <label htmlFor="firstName" style={styles.formGroupLabel}>First Name</label>
@@ -307,7 +296,7 @@ const Contact = () => {
           <button type="submit" style={styles.submitBtn} onMouseOver={(e) => e.target.style.backgroundColor = styles.submitBtnHover.backgroundColor} onMouseOut={(e) => e.target.style.backgroundColor = styles.submitBtn.backgroundColor}>
             Send Message
           </button>
-        </form>
+        </form> */}
       </div>
     </div>
   );
