@@ -2,7 +2,27 @@ import React from 'react';
 import styled from 'styled-components';
 import myPortrait from '../assets/myportrait.jpg';
 
+// Star component to display the rating
+const Star = ({ filled }) => (
+  <StarIcon filled={filled}>★</StarIcon>
+);
+
 const About = () => {
+  const skills = [
+    { name: 'Swift', rating: 4 },
+    { name: 'SwiftUI', rating: 4 },
+    { name: 'Objective-C', rating: 4 },
+    { name: 'Kotlin', rating: 3 },
+    { name: 'Golang', rating: 5 },
+    { name: 'C++', rating: 4 },
+    { name: 'REST APIs', rating: 5 },
+    { name: 'VPN', rating: 4 },
+    { name: 'MDM', rating: 4 },
+    { name: 'CI/CD', rating: 4 },
+    { name: 'Security', rating: 5 },
+    { name: 'Profiling & Optimization', rating: 4 }
+  ];
+
   return (
     <AboutContainer>
       <LeftContainer>
@@ -29,9 +49,14 @@ const About = () => {
       <RightContainer>
         <Section>
           <ProfileImage src={myPortrait} alt="Pradeep Tiwari's Profile" />
-          <h2>🌟 Skills</h2>
+          <h2 style = {{color: '#63e6be'}}>🌟 Skills</h2>
           <ul>
-            <li>Swift, SwiftUI, Objective-C, Kotlin, Golang, C++, REST APIs, VPN, MDM, CI/CD, Security, Profiling & Optimization</li>
+            {skills.map((skill, index) => (
+              <li key={index}>
+                {skill.name} - 
+                <StarRating rating={skill.rating} />
+              </li>
+            ))}
           </ul>
         </Section>
       </RightContainer>
@@ -39,6 +64,16 @@ const About = () => {
   );
 };
 
+// Reusable StarRating component
+const StarRating = ({ rating }) => {
+  const stars = [];
+  for (let i = 1; i <= 5; i++) {
+    stars.push(<Star key={i} filled={i <= rating} />);
+  }
+  return <StarWrapper>{stars}</StarWrapper>;
+};
+
+// Styled components
 const AboutContainer = styled.div`
   display: flex;
   align-items: flex-start;
@@ -50,7 +85,7 @@ const AboutContainer = styled.div`
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
   font-family: 'Roboto', sans-serif;
-  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+  transition: background-color 0.3s ease, color 0.3s ease;
 `;
 
 const LeftContainer = styled.div`
@@ -60,7 +95,7 @@ const LeftContainer = styled.div`
   flex-direction: column;
   gap: 20px;
   color: #ecf0f1;
-  background: rgba(0, 0, 0, 0.7); 
+  background: rgba(0, 0, 0, 0.7);
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
   padding: 20px;
@@ -83,38 +118,33 @@ const RightContainer = styled.div`
   z-index: 1;
 `;
 
-
-
 const ProfileImage = styled.img`
   width: 100%;
   height: 70%;
   object-fit: cover;
-  border: 5px solid rgba(192, 184, 184, 0.2); /* Border with a light gray color */
-  border-radius: 15px; /* Rounded corners */
-  box-shadow: 0 4px 8px rgba(192, 184, 184, 0.2); /* Shadow with a slightly more pronounced effect */
+  border: 5px solid rgba(192, 184, 184, 0.2);
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(192, 184, 184, 0.2);
 `;
 
 const Bio = styled.div`
   max-width: 800px;
-
   h1 {
     margin-bottom: 10px;
     font-size: 2.5rem;
     color: #63e6be;
     font-family: 'Merriweather', serif;
-     margin: 0 auto; /* Center the container horizontally */
-  text-align: center; /* Center all text content inside */
+    text-align: center;
   }
-p {
-  margin-bottom: 20px;
-  line-height: 1.8;
-  font-size: 1.1rem;
-  color: rgb(255, 255, 255);
-  font-family: 'Roboto', sans-serif;
-  text-align: left; /* Align text to the right */
-  padding-left: 20px; /* Optional: Adds padding to the left for a nice indentation */
-}
-
+  p {
+    margin-bottom: 20px;
+    line-height: 1.8;
+    font-size: 1.1rem;
+    color: rgb(255, 255, 255);
+    font-family: 'Roboto', sans-serif;
+    text-align: left;
+    padding-left: 20px;
+  }
   strong {
     color: rgb(255, 255, 255);
     font-weight: bold;
@@ -123,23 +153,30 @@ p {
 
 const Section = styled.section`
   margin-bottom: 30px;
-
   h2 {
     font-size: 1.8rem;
     color: rgb(209, 199, 199);
     margin-bottom: 15px;
   }
-
   ul {
     list-style-type: none;
     padding-left: 0;
-
     li {
       font-size: 1.1rem;
       color: rgb(255, 255, 255);
       margin-bottom: 10px;
     }
   }
+`;
+
+// Star and star rating styles
+const StarWrapper = styled.span`
+  margin-left: 10px;
+`;
+
+const StarIcon = styled.span`
+  font-size: 1.2rem;
+  color: ${({ filled }) => (filled ? 'yellow' : '#ccc')};
 `;
 
 export default About;
