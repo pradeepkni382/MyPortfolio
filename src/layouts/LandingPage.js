@@ -38,9 +38,9 @@ const LandingPage = () => {
           <NavItem to="/Resume"  icon={resumeIcon}>
             Resume
           </NavItem>
-          <NavItem to="/Blogs"  icon={blogIcon}>
+          {/* <NavItem to="/Blogs"  icon={blogIcon}>
             Blogs
-          </NavItem>
+          </NavItem> */}
           <NavItem to="/Contact"  icon={contactIcon}>
             Contact
           </NavItem>

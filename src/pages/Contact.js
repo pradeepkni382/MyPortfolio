@@ -1,4 +1,8 @@
 import React, { useState } from 'react';
+import xLogo from '../assets/xlogo.jpg';
+import fbLogo from '../assets/fblogo.jpg';
+import linkedinLogo from '../assets/linkedin.png';
+import githubLogo from '../assets/gitlogo.jpg';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -30,7 +34,7 @@ const Contact = () => {
   const styles = {
     contactContainer: {
       display: 'flex',
-      justifyContent: 'space-between',
+      // justifyContent: 'space-between',
       padding: '30px',
       gap: '10px',
       flexWrap: 'wrap',
@@ -176,17 +180,17 @@ const Contact = () => {
         <div>
           <h3 style={styles.contactSubheading}>Social Media</h3>
           <div style={styles.socialMediaLinks}>
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
-              <img src="https://via.placeholder.com/30x30?text=F" alt="Facebook" style={styles.socialIcon} />
+            <a href="https://www.facebook.com/pradeep.tiwari.16" target="_blank" rel="noopener noreferrer">
+              <img src={fbLogo} alt="Facebook" style={styles.socialIcon} />
             </a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-              <img src="https://via.placeholder.com/30x30?text=L" alt="LinkedIn" style={styles.socialIcon} />
+            <a href="https://www.linkedin.com/in/pradeep-tiwari-kni382/" target="_blank" rel="noopener noreferrer">
+              <img src={linkedinLogo} alt="LinkedIn" style={styles.socialIcon} />
             </a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
-              <img src="https://via.placeholder.com/30x30?text=I" alt="Instagram" style={styles.socialIcon} />
+            <a href="https://github.com/pradeepkni382" target="_blank" rel="noopener noreferrer">
+              <img src={githubLogo} alt="github" style={styles.socialIcon} />
             </a>
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-              <img src="https://via.placeholder.com/30x30?text=T" alt="Twitter" style={styles.socialIcon} />
+            <a href="https://x.com/pradeepkni382" target="_blank" rel="noopener noreferrer">
+              <img src={xLogo} alt="Twitter" style={styles.socialIcon} />
             </a>
           </div>
         </div>
