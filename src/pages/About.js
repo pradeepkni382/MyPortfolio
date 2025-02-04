@@ -46,6 +46,9 @@ const AboutContainer = styled.div`
   gap: 20px;
   background-color: transparent;
   color: #ecf0f1;
+  background: transparent; 
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
   font-family: 'Roboto', sans-serif;
   transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
 `;

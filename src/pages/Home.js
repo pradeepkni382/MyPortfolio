@@ -137,9 +137,9 @@ const TopContainer = styled.div`
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
   align-items: center;
-  background: transparent; // Slightly transparent background
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+  // background: transparent; // Slightly transparent background
+  // border-radius: 12px;
+  // box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
   padding: 2rem;
 
   @media (max-width: 768px) {

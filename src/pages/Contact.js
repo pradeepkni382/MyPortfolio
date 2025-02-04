@@ -45,8 +45,8 @@ const Contact = () => {
       maxWidth: '600px', // Limit the maximum width of the form
       padding: '20px',
       backgroundColor: 'rgba(0, 0, 0, 0.7)',
-      borderRadius: '8px',
-      boxShadow: '0 2px 10px rgba(0, 0, 0, 0.1)',
+      borderRadius: '12px',
+      boxShadow: '0 4px 15px rgba(0, 0, 0, 0.6)',
     },
     contactLeftHeading: {
       fontSize: '2rem',

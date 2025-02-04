@@ -2,6 +2,9 @@
 import React from 'react';
 import resumeLink from '../assets/resume/Pradeep Tiwari.pdf';
 
+// background: transparent; // Slightly transparent background
+//   border-radius: 12px;
+//   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
 const Resume = () => {
   return (
     <div
@@ -13,6 +16,8 @@ const Resume = () => {
       // height: '100vh',           // Full viewport height
       textAlign: 'center',
       background: 'rgba(0, 0, 0, 0.7)',
+      borderRadius: '12px',
+      boxShadow: '0 4px 15px rgba(0, 0, 0, 0.6)',
       width: '70%',
       margin: '0 auto',         // Ensure it stays within the page margins
     }}
@@ -22,7 +27,10 @@ const Resume = () => {
         src={resumeLink}
         width="80%"
         height="700px"
-        style={{ border: 'none' }}
+        style={{ border: 'none',
+          background: 'rgba(0, 0, 0, 0.7)',
+          borderRadius: '12px',
+          boxShadow: '0 4px 15px rgba(0, 0, 0, 0.6)', }}
         title="Resume"    
       ></iframe>
 
