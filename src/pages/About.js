@@ -7,7 +7,7 @@ const About = () => {
     <AboutContainer>
       <LeftContainer>
         <Bio>
-          <h1>About Me</h1>
+          <h1>About Me 👨‍💻</h1>
           <p>
             I am a Senior Software Engineer with 11 years of experience in iOS, macOS, and Android development, known for my problem-solving mindset, ownership, and ability to deliver impactful solutions independently. Throughout my career, I have consistently taken initiative, solved complex technical challenges, and driven projects forward with minimal oversight.
           </p>
@@ -70,7 +70,7 @@ const LeftContainer = styled.div`
 
 const RightContainer = styled.div`
   flex: 1;
-  max-width: 35%;
+  max-width: 40%;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -100,17 +100,20 @@ const Bio = styled.div`
   h1 {
     margin-bottom: 10px;
     font-size: 2.5rem;
-    color: rgb(209, 199, 199);
+    color: #63e6be;
     font-family: 'Merriweather', serif;
+     margin: 0 auto; /* Center the container horizontally */
+  text-align: center; /* Center all text content inside */
   }
-
-  p {
-    margin-bottom: 20px;
-    line-height: 1.8;
-    font-size: 1.1rem;
-    color: rgb(255, 255, 255);
-    font-family: 'Roboto', sans-serif;
-  }
+p {
+  margin-bottom: 20px;
+  line-height: 1.8;
+  font-size: 1.1rem;
+  color: rgb(255, 255, 255);
+  font-family: 'Roboto', sans-serif;
+  text-align: left; /* Align text to the right */
+  padding-left: 20px; /* Optional: Adds padding to the left for a nice indentation */
+}
 
   strong {
     color: rgb(255, 255, 255);

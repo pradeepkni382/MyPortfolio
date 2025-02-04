@@ -22,6 +22,7 @@ const TransparentBackground = styled.div`
 const Header = styled.h1`
   font-size: 2rem;
   margin-bottom: 1rem;
+  color: #63e6be;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
 `;
 
