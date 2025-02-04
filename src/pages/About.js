@@ -53,7 +53,8 @@ const About = () => {
           <ul>
             {skills.map((skill, index) => (
               <li key={index}>
-                {skill.name} - 
+                <SkillName>{skill.name}</SkillName>  
+                <Spacer /> {/* Spacer for distance */}
                 <StarRating rating={skill.rating} />
               </li>
             ))}
@@ -145,10 +146,6 @@ const Bio = styled.div`
     text-align: left;
     padding-left: 20px;
   }
-  strong {
-    color: rgb(255, 255, 255);
-    font-weight: bold;
-  }
 `;
 
 const Section = styled.section`
@@ -165,11 +162,20 @@ const Section = styled.section`
       font-size: 1.1rem;
       color: rgb(255, 255, 255);
       margin-bottom: 10px;
+      display: flex;
+      align-items: center;
     }
   }
 `;
 
-// Star and star rating styles
+const SkillName = styled.span`
+  flex: 1;
+`;
+
+const Spacer = styled.div`
+  margin-left: 10px; /* Add distance between skill name and star rating */
+`;
+
 const StarWrapper = styled.span`
   margin-left: 10px;
 `;
