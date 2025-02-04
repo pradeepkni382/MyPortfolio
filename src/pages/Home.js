@@ -135,8 +135,12 @@ const Main = styled.main`
 const TopContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 3rem;
-  align-items: start;
+  gap: 1rem;
+  align-items: center;
+  background: transparent; // Slightly transparent background
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+  padding: 2rem;
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
@@ -145,12 +149,12 @@ const TopContainer = styled.div`
 `;
 
 const RightContainer = styled.div`
-  position: relative;
+  // position: center;
   padding: 2rem;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 16px;
+ background: rgba(0, 0, 0, 0.7); // Slightly transparent background
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(10px);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 `;
 
 const Greeting = styled.h1`
@@ -186,7 +190,7 @@ const Cursor = styled.span`
 
 const LeftContainer = styled.div`
   padding: 2rem;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(0, 0, 0, 0.7);
   border-radius: 16px;
   backdrop-filter: blur(10px);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);

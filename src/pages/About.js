@@ -56,9 +56,13 @@ const LeftContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 20px;
-  color: #ecf0f1
-  background: rgba(0, 0, 0, 0.7);
-  back
+  color: #ecf0f1;
+  background: rgba(0, 0, 0, 0.7); 
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+  padding: 20px;
+  position: relative;
+  z-index: 1;
 `;
 
 const RightContainer = styled.div`
@@ -67,9 +71,16 @@ const RightContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 20px;
-  color: #ecf0f1
+  color: #ecf0f1;
   background: rgba(0, 0, 0, 0.7);
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+  padding: 20px;
+  position: relative;
+  z-index: 1;
 `;
+
+
 
 const ProfileImage = styled.img`
   width: 100%;

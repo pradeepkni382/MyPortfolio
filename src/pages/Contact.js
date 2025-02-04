@@ -31,15 +31,15 @@ const Contact = () => {
     contactContainer: {
       display: 'flex',
       justifyContent: 'space-between',
-      padding: '20px',
-      gap: '30px',
+      padding: '30px',
+      gap: '10px',
       flexWrap: 'wrap',
     },
     contactLeft: {
       flex: 1,
       maxWidth: '45%', // Ensure both sides are equal width
       padding: '20px',
-      backgroundColor: '#f4f4f4',
+      backgroundColor: 'rgba(0, 0, 0, 0.7)',
       borderRadius: '8px',
       boxShadow: '0 2px 10px rgba(0, 0, 0, 0.1)',
     },
@@ -61,7 +61,7 @@ const Contact = () => {
     },
     contactSubDescription: {
       fontSize: '1rem',
-      color: '#555',
+      color: 'rgba(255, 255, 255, 0.7)',
     },
     socialMediaLinks: {
       display: 'flex',
@@ -76,7 +76,7 @@ const Contact = () => {
       flex: 1,
       maxWidth: '45%', // Ensure both sides are equal width
       padding: '20px',
-      backgroundColor: '#fff',
+      backgroundColor: 'rgba(0, 0, 0, 0.7)',
       borderRadius: '8px',
       boxShadow: '0 4px 10px rgba(0, 0, 0, 0.1)',
       minWidth: '300px',
@@ -87,7 +87,7 @@ const Contact = () => {
     formGroupLabel: {
       fontWeight: 'bold',
       marginBottom: '8px',
-      color: '#333',
+      color: 'rgba(255, 255, 255, 0.7)',
     },
     formGroupInput: {
       padding: '12px',
