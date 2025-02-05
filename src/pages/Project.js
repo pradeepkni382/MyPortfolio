@@ -71,91 +71,97 @@ const ProjectDescription = styled.p`
 const ProjectPage = () => {
   return (
     <>
-      <TransparentBackground>
-      <Header>Professional Experience Projects</Header>
-      <ProjectContainer>
-        <Project href="#">
-          {/* <ProjectImage src="path_to_image" alt="Bloxone Endpoint Clients" /> */}
-          <div>
-            <ProjectTitle>Bloxone Endpoint Clients (macOS/Linux Apps)</ProjectTitle>
-            <ProjectDescription>
-              Designed and developed Infoblox Bloxone EP, a lightweight roaming client that securely redirects DNS queries from devices to the Infoblox Bloxone cloud service over an encrypted transport.
-              <br /><strong>Tech Stack:</strong> C++, Golang, macOS/Linux Networking
-            </ProjectDescription>
-          </div>
-        </Project>
-        <Project href="#">
-          {/* <ProjectImage src="path_to_image" alt="Bloxone Endpoint Apps" /> */}
-          <div>
-            <ProjectTitle>Bloxone Endpoint Apps (iOS/Android Apps)</ProjectTitle>
-            <ProjectDescription>
-              Developed security-focused endpoint applications for iOS and Android, operating at the DNS level to identify threats and prevent attacks early in the lifecycle. Integrated automation and ecosystem support for enhanced security.
-              <br /><strong>Tech Stack:</strong> Swift, Kotlin, Firebase, REST APIs
-            </ProjectDescription>
-          </div>
-        </Project>
-        <Project href="#">
-          {/* <ProjectImage src="path_to_image" alt="Appzillon MADP" /> */}
-          <div>
-            <ProjectTitle>Appzillon MADP</ProjectTitle>
-            <ProjectDescription>
-              Developed a cross-platform suite to build secure and flexible applications for mobile and web. Enabled faster deployment for banking and financial institutions.
-              <br /><strong>Tech Stack:</strong> Objective-C, Swift, JavaScript, OAuth 2.0
-            </ProjectDescription>
-          </div>
-        </Project>
-        <Project href="#">
-          {/* <ProjectImage src="path_to_image" alt="Noor Bank App" /> */}
-          <div>
-            <ProjectTitle>Noor Bank App</ProjectTitle>
-            <ProjectDescription>
-              Created an online banking solution for Noor Bank (Dubai), integrating Apple Pay and implementing encryption and hashing standards.
-              <br /><strong>Tech Stack:</strong> Swift, Apple Pay, REST APIs
-            </ProjectDescription>
-          </div>
-        </Project>
-        <Project href="#">
-          {/* <ProjectImage src="path_to_image" alt="CITI Dealbase Express" /> */}
-          <div>
-            <ProjectTitle>CITI Dealbase Express</ProjectTitle>
-            <ProjectDescription>
-              Designed an enterprise app for Citi Bank’s sales team to streamline deal signings, ensuring high security with Blackberry Good Dynamics framework.
-              <br /><strong>Tech Stack:</strong> Objective-C, Swift, Blackberry Dynamics
-            </ProjectDescription>
-          </div>
-        </Project>
-        <Project href="#">
-          {/* <ProjectImage src="path_to_image" alt="Spitamen Bank App" /> */}
-          <div>
-            <ProjectTitle>Spitamen Bank App</ProjectTitle>
-            <ProjectDescription>
-              Developed an online banking app for Spitamen Bank (Tajikistan), integrating APIs for secure banking operations and architecting an MVC design.
-              <br /><strong>Tech Stack:</strong> Swift, MVC, REST APIs
-            </ProjectDescription>
-          </div>
-        </Project>
-      </ProjectContainer>
-    </TransparentBackground>
+  <TransparentBackground>
+  <Header>Professional Experience Projects</Header>
+  <ProjectContainer>
+    <Project href="#">
+      <div>
+        <ProjectTitle>BloxOne Endpoint Clients (macOS/Linux)</ProjectTitle>
+        <ProjectDescription>
+          Architected and developed the BloxOne Endpoint Client, a lightweight and secure DNS roaming client for macOS and Linux. 
+          Designed to efficiently redirect DNS queries to Infoblox's cloud security services, ensuring privacy, performance, and compliance over an encrypted transport layer.
+          <br /><strong>Tech Stack:</strong> Swift, Objective C++, Golang.
+        </ProjectDescription>
+      </div>
+    </Project>
+
+    <Project href="#">
+      <div>
+        <ProjectTitle>BloxOne Endpoint Apps (iOS/Android)</ProjectTitle>
+        <ProjectDescription>
+          Built security-centric mobile endpoint applications that detect and mitigate DNS-based threats in real time, securing enterprise networks. 
+          Integrated automated security enforcement, seamless cloud connectivity, and ecosystem integrations, improving mobile threat intelligence.
+          <br /><strong>Tech Stack:</strong> Swift, Kotlin, SwiftUI, Jetpack Compose, Firebase.
+        </ProjectDescription>
+      </div>
+    </Project>
+
+    <Project href="#">
+      <div>
+        <ProjectTitle>Appzillon MADP</ProjectTitle>
+        <ProjectDescription>
+          Led the development of a cross-platform application development framework, empowering banks and enterprises to create secure, scalable, and flexible mobile and web applications. 
+          Implemented robust authentication mechanisms and enhanced API security, reducing vulnerabilities.
+          <br /><strong>Tech Stack:</strong> Objective-C, Swift, SwiftUI, JavaScript, HTML, CSS, Java.
+        </ProjectDescription>
+      </div>
+    </Project>
+
+    <Project href="#">
+      <div>
+        <ProjectTitle>Noor Bank App</ProjectTitle>
+        <ProjectDescription>
+          Designed and developed an end-to-end mobile banking solution for Noor Bank (Dubai), providing seamless digital transactions, account management, and secure payments. 
+          Integrated Apple Pay with industry-standard encryption and hashing protocols, ensuring fraud prevention and data security.
+          <br /><strong>Tech Stack:</strong> Objective C, Swift, Apple Pay, HTML, CSS.
+        </ProjectDescription>
+      </div>
+    </Project>
+
+    <Project href="#">
+      <div>
+        <ProjectTitle>CITI Dealbase Express</ProjectTitle>
+        <ProjectDescription>
+          Built an enterprise mobility solution for Citi Bank’s sales team, streamlining deal approval and contract signing workflows.  
+          Integrated Blackberry Good Dynamics to enforce enterprise-grade security and compliance.
+          <br /><strong>Tech Stack:</strong> Objective-C, Swift, Blackberry Dynamics
+        </ProjectDescription>
+      </div>
+    </Project>
+
+    <Project href="#">
+      <div>
+        <ProjectTitle>Spitamen Bank App</ProjectTitle>
+        <ProjectDescription>
+          Developed a modern and secure mobile banking app for Spitamen Bank (Tajikistan), offering seamless financial transactions, user authentication, and account management.  
+          Architected the app using MVC design principles, ensuring modular and maintainable code while enhancing security and reliability.
+          <br /><strong>Tech Stack:</strong> Objective C, HTML, CSS.
+        </ProjectDescription>
+      </div>
+    </Project>
+  </ProjectContainer>
+</TransparentBackground>
+
     <TransparentBackground>
-    <Header>Personal / Independent Projects</Header>
+    <Header>Independent Projects</Header>
       <ProjectContainer>
         <Project href="#">
           {/* <ProjectImage src="path_to_image" alt="Bloxone Endpoint Clients" /> */}
           <div>
-            <ProjectTitle>Bloxone Endpoint Clients (macOS/Linux Apps)</ProjectTitle>
+            <ProjectTitle>CanvasJoy(iOS/Android)</ProjectTitle>
             <ProjectDescription>
-              Designed and developed Infoblox Bloxone EP, a lightweight roaming client that securely redirects DNS queries from devices to the Infoblox Bloxone cloud service over an encrypted transport.
-              <br /><strong>Tech Stack:</strong> C++, Golang, macOS/Linux Networking
+              CanvasJoy is an interactive digital drawing app designed for children, offering a creative and intuitive canvas for freehand drawing, coloring, and sketching. The app enables kids to import images from the gallery, draw over them, and explore their creativity with an extensive color palette and brush options.
+              <br /><strong>Tech Stack:</strong> Swift (iOS), Kotlin (Android), Jetpack Compose, SwiftUI, Core Graphics, Firebase
             </ProjectDescription>
           </div>
         </Project>
         <Project href="#">
           {/* <ProjectImage src="path_to_image" alt="Bloxone Endpoint Apps" /> */}
           <div>
-            <ProjectTitle>Bloxone Endpoint Apps (iOS/Android Apps)</ProjectTitle>
+            <ProjectTitle>APNS Tester(macOS)</ProjectTitle>
             <ProjectDescription>
-              Developed security-focused endpoint applications for iOS and Android, operating at the DNS level to identify threats and prevent attacks early in the lifecycle. Integrated automation and ecosystem support for enhanced security.
-              <br /><strong>Tech Stack:</strong> Swift, Kotlin, Firebase, REST APIs
+              APNS Tester is a powerful and lightweight macOS application designed for developers to test Apple Push Notification Service (APNS) on iOS simulators without requiring a backend server. It simplifies the testing and debugging of various push notification types, ensuring seamless integration before deployment.
+              <br /><strong>Tech Stack:</strong> Swift (macOS), SwiftUI, Core Foundation.
             </ProjectDescription>
           </div>
         </Project>
