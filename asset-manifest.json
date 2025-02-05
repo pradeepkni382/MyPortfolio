@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/MyPortfolio/static/css/main.e6c13ad2.css",
+    "main.js": "/MyPortfolio/static/js/main.df0c155c.js",
+    "static/js/146.9aa31bb4.chunk.js": "/MyPortfolio/static/js/146.9aa31bb4.chunk.js",
+    "static/media/PTLogo.jpg": "/MyPortfolio/static/media/PTLogo.7dd74b11e1da5c070de0.jpg",
+    "static/media/gitlogo.jpg": "/MyPortfolio/static/media/gitlogo.52229f918d3db87ed3bd.jpg",
+    "static/media/myportrait.jpg": "/MyPortfolio/static/media/myportrait.0600e89f76036b126410.jpg",
+    "static/media/Pradeep Tiwari.pdf": "/MyPortfolio/static/media/Pradeep Tiwari.8f5bc682c698b4afe1cf.pdf",
+    "static/media/xlogo.jpg": "/MyPortfolio/static/media/xlogo.a22fd4ea10bbeccc6d10.jpg",
+    "static/media/linkedin.png": "/MyPortfolio/static/media/linkedin.2ffaea914e8a62b84275.png",
+    "static/media/fblogo.jpg": "/MyPortfolio/static/media/fblogo.77eba19656f5ce51d86f.jpg",
+    "index.html": "/MyPortfolio/index.html",
+    "main.e6c13ad2.css.map": "/MyPortfolio/static/css/main.e6c13ad2.css.map",
+    "main.df0c155c.js.map": "/MyPortfolio/static/js/main.df0c155c.js.map",
+    "146.9aa31bb4.chunk.js.map": "/MyPortfolio/static/js/146.9aa31bb4.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.df0c155c.js"
+  ]
+}
