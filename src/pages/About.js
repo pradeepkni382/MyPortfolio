@@ -13,43 +13,37 @@ const About = () => {
     { name: 'SwiftUI', rating: 4 },
     { name: 'Objective-C', rating: 4 },
     { name: 'Kotlin', rating: 3 },
-    { name: 'Golang', rating: 5 },
-    { name: 'C++', rating: 4 },
-    { name: 'REST APIs', rating: 5 },
-    { name: 'VPN', rating: 4 },
-    { name: 'MDM', rating: 4 },
+    { name: 'Python', rating: 2 },
+    { name: 'C++', rating: 3 },
+    { name: 'Golang', rating: 1 },
     { name: 'CI/CD', rating: 4 },
-    { name: 'Security', rating: 5 },
+    { name: 'Security', rating: 4 },
     { name: 'Profiling & Optimization', rating: 4 }
   ];
 
   return (
     <AboutContainer>
-      <LeftContainer>
-        <Bio>
-          <h1>About Me 👨‍💻</h1>
-          <p>
-            I am a Senior Software Engineer with 11 years of experience in iOS, macOS, and Android development, known for my problem-solving mindset, ownership, and ability to deliver impactful solutions independently. Throughout my career, I have consistently taken initiative, solved complex technical challenges, and driven projects forward with minimal oversight.
-          </p>
-          <p>
-            At Infoblox, I played a key role in developing and enhancing the BloxOne Mobile Roaming Client for iOS, Android, macOS, and Linux. I successfully integrated VPN functionality, MDM support, and optimized network routing using C++ and Golang, ensuring security and high performance. I also managed App Store and Play Store releases, taking full ownership of deployment and maintenance. When challenges arose, I proactively identified and implemented solutions without waiting for directions.
-          </p>
-          <p>
-            Previously, at i-exceed, I not only led iOS development for the Appzillon platform but also took responsibility for solving deep-rooted technical issues, reducing app load times by 50%, fixing 400+ legacy bugs, and implementing advanced cryptographic techniques that eliminated security vulnerabilities. My ability to quickly learn, adapt, and optimize workflows significantly improved product stability and security.
-          </p>
-          <p>
-            Beyond corporate work, I thrive on self-driven projects, having developed and published multiple applications, explored browser extensions, and worked on freelance projects to continuously sharpen my skills. I take initiative, identify problems before they escalate, and drive solutions that have a lasting impact.
-          </p>
-          <p>
-            I believe in getting things done, making decisions that move projects forward, and continuously improving my craft. Let’s build something exceptional together. 🚀
-          </p>
-        </Bio>
-      </LeftContainer>
-
-      <RightContainer>
-        <Section>
-          <ProfileImage src={myPortrait} alt="Pradeep Tiwari's Profile" />
-          <h2 style = {{color: '#63e6be'}}>🌟 Skills</h2>
+   <LeftContainer>
+    <Bio>
+        <h1>About Me 👨‍💻</h1>
+        <p>
+            I am a <strong>Senior Software Engineer</strong> with <strong>11 years of experience</strong> in iOS, macOS, and Android development, specializing in high-performance, secure, and scalable applications. I take ownership of projects, solve complex challenges, and deliver impactful solutions with minimal oversight.
+        </p>
+        <p>
+            At <strong>Infoblox</strong>, I played a key role in developing the <strong>BloxOne Mobile Roaming Client</strong>, integrating <strong>VPN, MDM support</strong>, and optimizing network routing using <strong>C++ and Golang</strong>. I also managed App Store and Play Store releases, ensuring seamless deployment and maintenance.
+        </p>
+        <p>
+            Previously, at <strong>i-exceed</strong>, I led iOS development for the <strong>Appzillon platform</strong>, resolving <strong>400+ legacy issues</strong>, cutting app load times by <strong>50%</strong>, and implementing advanced security enhancements.
+        </p>
+        <p>
+            Passionate about innovation, I develop and publish my own applications, explore browser extensions. I thrive on continuous learning, currently expanding into <strong>AI Agents</strong> to push the boundaries of intelligent applications.
+        </p>
+        <p>
+            I believe in <strong>data-driven decisions, automation, and continuous improvement</strong>. Let’s create something extraordinary together. 🚀
+        </p>
+    </Bio>
+    <Section>
+       <h2 style = {{color: '#63e6be'}}>🌟 Skills</h2>
           <ul>
             {skills.map((skill, index) => (
               <li key={index}>
@@ -59,6 +53,12 @@ const About = () => {
               </li>
             ))}
           </ul>
+    </Section>
+</LeftContainer>
+
+      <RightContainer>
+        <Section>
+          <ProfileImage src={myPortrait} alt="Pradeep Tiwari's Profile" />
         </Section>
       </RightContainer>
     </AboutContainer>
@@ -154,6 +154,7 @@ const Section = styled.section`
     font-size: 1.8rem;
     color: rgb(209, 199, 199);
     margin-bottom: 15px;
+    text-align: center;
   }
   ul {
     list-style-type: none;

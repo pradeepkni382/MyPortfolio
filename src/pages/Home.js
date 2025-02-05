@@ -52,54 +52,50 @@ const Home = () => {
 
   return (
     <PageContainer>
-      <Main>
+    <Main>
         <TopContainer>
-          <RightContainer>
-            <Greeting>Namaste ! 🙏</Greeting>
-            <Name>I am Pradeep Tiwari 🇮🇳</Name>
-            <TypingText>{typing}<Cursor>|</Cursor></TypingText>
-          </RightContainer>
-          
-          <LeftContainer>
-            <SectionHeading>🌟 Why Work With Me?</SectionHeading>
-            <ContentGrid>
-              <BulletPoint>
-                <CheckIcon>✓</CheckIcon>
-                <BulletText>
-                  <strong>Self-Starter:</strong> Take ownership of problems and drive solutions independently
-                </BulletText>
-              </BulletPoint>
-              
-              <BulletPoint>
-                <CheckIcon>✓</CheckIcon>
-                <BulletText>
-                  <strong>Results-Oriented:</strong> Proven track record in performance, security, and UX improvements
-                </BulletText>
-              </BulletPoint>
+            <RightContainer>
+                <Greeting>Namaste ! 🙏</Greeting>
+                <Name>I am Pradeep Tiwari 🇮🇳</Name>
+                <TypingText>{typing}
+                    <Cursor>|</Cursor>
+                </TypingText>
+            </RightContainer>
 
-              <BulletPoint>
-                <CheckIcon>✓</CheckIcon>
-                <BulletText>
-                  <strong>Fast Learner:</strong> Mastered Golang, SwiftUI, and security frameworks to enhance products
-                </BulletText>
-              </BulletPoint>
-
-              <BulletPoint>
-                <CheckIcon>✓</CheckIcon>
-                <BulletText>
-                  <strong>High Impact:</strong> Delivered scalable features for thousands of users with minimal oversight
-                </BulletText>
-              </BulletPoint>
-            </ContentGrid>
-
-            <CallToAction>
-              I believe in actionable results, data-driven decisions, and continuous improvement.<br />
-              <strong>Let's create something extraordinary together 🚀</strong>
-            </CallToAction>
-          </LeftContainer>
+            <LeftContainer>
+                <SectionHeading>
+                    🌟 Why Work With Me?
+                </SectionHeading>
+                <ContentGrid>
+                    <BulletPoint>
+                        <CheckIcon>
+                            ✓
+                        </CheckIcon>
+                        <BulletText>
+                            <strong>
+                        Self-Starter:
+                        </strong> I take full ownership of projects, proactively solving challenges and delivering high-quality solutions without waiting for direction.
+                        </BulletText>
+                    </BulletPoint>
+                    <BulletPoint>
+                        <CheckIcon>✓</CheckIcon>
+                        <BulletText> <strong>Results-Oriented:</strong> With a proven track record in performance optimization, security enhancements, and UX improvements, my contributions directly impact product stability and user satisfaction. </BulletText>
+                    </BulletPoint>
+                    <BulletPoint>
+                        <CheckIcon>✓</CheckIcon>
+                        <BulletText> <strong>Fast Learner & Innovator:</strong> I continuously upskill, having mastered **Golang, SwiftUI, VPN, and MDM solutions**. Currently, I am diving deep into **AI Agents** to build intelligent and scalable applications. </BulletText>
+                    </BulletPoint>
+                    <BulletPoint>
+                        <CheckIcon>✓</CheckIcon>
+                        <BulletText> <strong>High Impact & Scalability:</strong> I have designed and delivered robust mobile and network security solutions used by thousands of users, ensuring seamless performance and scalability. </BulletText>
+                    </BulletPoint>
+                </ContentGrid>
+                <CallToAction> I believe in **data-driven decisions, automation, and continuous innovation** to create cutting-edge solutions.
+                    <br /> <strong>Let’s build something extraordinary together 🚀</strong> </CallToAction>
+            </LeftContainer>
         </TopContainer>
-      </Main>
-    </PageContainer>
+    </Main>
+</PageContainer>
   );
 };
 
@@ -134,7 +130,7 @@ const Main = styled.main`
 
 const TopContainer = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  // grid-template-columns: 1fr 1fr;
   gap: 1rem;
   align-items: center;
   // background: transparent; // Slightly transparent background
@@ -155,6 +151,7 @@ const RightContainer = styled.div`
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(10px);
+  text-align: center;
 `;
 
 const Greeting = styled.h1`
@@ -179,7 +176,9 @@ const TypingText = styled.h3`
   color: #74b9ff;
   font-weight: 500;
   display: flex;
-  align-items: center;
+  align-items: center;  // Centers vertically
+  justify-content: center;  // Centers horizontally
+  text-align: center;  // Optional if you want it to align the text within flex
 `;
 
 const Cursor = styled.span`
