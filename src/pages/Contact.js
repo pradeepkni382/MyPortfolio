@@ -66,7 +66,7 @@ const Contact = () => {
     },
     contactSubDescription: {
       fontSize: '1rem',
-      color: 'rgba(255, 255, 255, 0.7)',
+      color: 'rgb(255, 255, 255)',
     },
     socialMediaLinks: {
       display: 'flex',
@@ -155,7 +155,7 @@ const Contact = () => {
         {/* Chat to Us */}
         <div>
           <h3 style={styles.contactSubheading}>Let’s Chat!</h3>
-          <p style={styles.contactSubDescription}>I’m always open to discussing new projects. Feel free to reach out via email at <a href="mailto:pradeepkni382@gmail.com">pradeepkni382@gmail.com</a>, and I’ll get back to you as soon as I can.</p>
+          <p style={styles.contactSubDescription}>I’m always open to discussing new projects. Feel free to reach out via email at <a href="mailto:pradeepkni382@gmail.com" style={{ color: '#63e6be' }}>pradeepkni382@gmail.com</a>, and I’ll get back to you as soon as I can.</p>
         </div>
 
         {/* Call Us */}
@@ -170,7 +170,7 @@ const Contact = () => {
           <h3 style={styles.contactSubheading}>Social Media</h3>
           <p style={styles.contactSubDescription}>Stay connected with me:</p>
           <div style={styles.socialMediaLinks}>
-            <a href="https://www.facebook.com/pradeep.tiwari.16" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.facebook.com/pradeep.tiwari.16" target="_blank" rel="noopener noreferrer"> 
               <img src={fbLogo} alt="Facebook" style={styles.socialIcon} />
             </a>
             <a href="https://www.linkedin.com/in/pradeep-tiwari-kni382/" target="_blank" rel="noopener noreferrer">
