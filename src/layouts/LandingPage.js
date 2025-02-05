@@ -51,9 +51,6 @@ const LandingPage = () => {
       </Main>
       <Footer>
         <FooterContent>
-        <DevInfo>
-           Developed by Pradeep Tiwari.
-          </DevInfo>
           <SocialLinks>
             <a href="https://x.com/pradeepkni382" target="_blank" rel="noopener noreferrer">
               <img src={xLogo} alt="Twitter" />
@@ -68,6 +65,9 @@ const LandingPage = () => {
               <img src={githubLogo} alt="GitHub" />
             </a>
           </SocialLinks>
+          <DevInfo>
+           Developed by Pradeep Tiwari.
+          </DevInfo>
           <Copyright>
             &copy; {new Date().getFullYear()} Pradeep Tiwari. All rights reserved.
           </Copyright>
@@ -217,6 +217,7 @@ const ThemeToggle = styled.div`
 const SocialLinks = styled.div`
   display: flex;
   gap: 15px;
+  
 
   a {
     img {
@@ -240,7 +241,7 @@ const Copyright = styled.div`
 `;
 const DevInfo = styled.div`
   font-size: 0.9rem;
-  text-align: left;
+  text-align: center;
   flex: 1; /* Make it take up the left portion */
 `;
 
