@@ -11,7 +11,7 @@ import Home from './pages/Home';
 
 const App = () => {
   return (
-    <Router>
+    <Router basename="MyPortfolio">
       <Routes>
         <Route path="/" element={<LandingPage />}>
           <Route index element={<Home />} /> {/* Default body content */}

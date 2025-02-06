@@ -52,50 +52,50 @@ const Home = () => {
 
   return (
     <PageContainer>
-    <Main>
+      <Main>
         <TopContainer>
-            <RightContainer>
-                <Greeting>Namaste ! 🙏</Greeting>
-                <Name>I am Pradeep Tiwari 🇮🇳</Name>
-                <TypingText>{typing}
-                    <Cursor>|</Cursor>
-                </TypingText>
-            </RightContainer>
+          <RightContainer>
+            <Greeting>Namaste ! 🙏</Greeting>
+            <Name>I am Pradeep Tiwari 🇮🇳</Name>
+            <TypingText>{typing}
+              <Cursor>|</Cursor>
+            </TypingText>
+          </RightContainer>
 
-            <LeftContainer>
-                <SectionHeading>
-                    🌟 Why Work With Me?
-                </SectionHeading>
-                <ContentGrid>
-                    <BulletPoint>
-                        <CheckIcon>
-                            ✓
-                        </CheckIcon>
-                        <BulletText>
-                            <strong>
-                        Self-Starter:
-                        </strong> I take full ownership of projects, proactively solving challenges and delivering high-quality solutions without waiting for direction.
-                        </BulletText>
-                    </BulletPoint>
-                    <BulletPoint>
-                        <CheckIcon>✓</CheckIcon>
-                        <BulletText> <strong>Results-Oriented:</strong> With a proven track record in performance optimization, security enhancements, and UX improvements, my contributions directly impact product stability and user satisfaction. </BulletText>
-                    </BulletPoint>
-                    <BulletPoint>
-                        <CheckIcon>✓</CheckIcon>
-                        <BulletText> <strong>Fast Learner & Innovator:</strong> I continuously upskill, having mastered **Golang, SwiftUI, VPN, and MDM solutions**. Currently, I am diving deep into **AI Agents** to build intelligent and scalable applications. </BulletText>
-                    </BulletPoint>
-                    <BulletPoint>
-                        <CheckIcon>✓</CheckIcon>
-                        <BulletText> <strong>High Impact & Scalability:</strong> I have designed and delivered robust mobile and network security solutions used by thousands of users, ensuring seamless performance and scalability. </BulletText>
-                    </BulletPoint>
-                </ContentGrid>
-                <CallToAction> I believe in **data-driven decisions, automation, and continuous innovation** to create cutting-edge solutions.
-                    <br /> <strong>Let’s build something extraordinary together 🚀</strong> </CallToAction>
-            </LeftContainer>
+          <LeftContainer>
+            <SectionHeading>
+                🌟 Why Work With Me?
+            </SectionHeading>
+            <ContentGrid>
+                <BulletPoint>
+                    <CheckIcon>
+                        ✓
+                    </CheckIcon>
+                    <BulletText>
+                        <strong>
+                    Self-Starter:
+                    </strong> I take full ownership of projects, proactively solving challenges and delivering high-quality solutions without waiting for direction.
+                    </BulletText>
+                </BulletPoint>
+                <BulletPoint>
+                    <CheckIcon>✓</CheckIcon>
+                    <BulletText> <strong>Results-Oriented:</strong> With a proven track record in performance optimization, security enhancements, and UX improvements, my contributions directly impact product stability and user satisfaction. </BulletText>
+                </BulletPoint>
+                <BulletPoint>
+                    <CheckIcon>✓</CheckIcon>
+                    <BulletText> <strong>Fast Learner & Innovator:</strong> I continuously upskill, having mastered **Golang, SwiftUI, VPN, and MDM solutions**. Currently, I am diving deep into **AI Agents** to build intelligent and scalable applications. </BulletText>
+                </BulletPoint>
+                <BulletPoint>
+                    <CheckIcon>✓</CheckIcon>
+                    <BulletText> <strong>High Impact & Scalability:</strong> I have designed and delivered robust mobile and network security solutions used by thousands of users, ensuring seamless performance and scalability. </BulletText>
+                </BulletPoint>
+            </ContentGrid>
+            <CallToAction> I believe in **data-driven decisions, automation, and continuous innovation** to create cutting-edge solutions.
+                <br /> <strong>Let’s build something extraordinary together 🚀</strong> </CallToAction>
+          </LeftContainer>
         </TopContainer>
-    </Main>
-</PageContainer>
+      </Main>
+    </PageContainer>
   );
 };
 
