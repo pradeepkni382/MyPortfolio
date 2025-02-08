@@ -21,7 +21,7 @@ const LandingPage = () => {
           <img
             src={ptIcon}
             alt="Company Logo"
-            onClick={() => (window.location.href = "/")}
+            onClick={() => (window.location.href = process.env.PUBLIC_URL + "/")}
           />
           <h2>Pradeep</h2>
         </Logo>
